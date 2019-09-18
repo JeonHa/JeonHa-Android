@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A6111111"
+        tools:context=".Main.QRcode.QRcodeActivity">
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/db_qr"
+            android:layout_marginTop="120dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+
+       android:layout_centerHorizontal="true" />
+    <TextView
+
+            android:id="@+id/bt_flash"
+            android:layout_margin="16dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zxing_msg_default_status"
+            />
+    <TextView
+            android:layout_marginBottom="126dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:text="해당 전통강좌\n한옥스테이 장소의
+QR코드를 스캔해주세요!"
+            />
+</RelativeLayout>
