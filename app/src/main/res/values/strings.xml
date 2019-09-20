@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JeonHa</string>
+    <string name="forgetIDPW"><u>아이디/비밀번호를 잊으셨나요?</u></string>
+
 </resources>
