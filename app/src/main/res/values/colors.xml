@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--추가-->
+    <color name="watermelon">#f3505a</color>
+    <color name="dark">#2e394a</color>
+    <color name="greyish_brown">#474747</color>
 </resources>
