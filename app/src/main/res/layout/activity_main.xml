@@ -1,27 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Main.MainActivity">
-<ImageView
-        android:id="@+id/iv_main_QRtest"
-        android:layout_margin="16dp"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/qr_icon"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp">
+        <ImageView
+                android:id="@+id/iv_main_QRtest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="12dp"
+                android:src="@drawable/qr_icon"/>
 
-    <TextView
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Main"
-            android:textSize="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_centerInParent="true"
+                   android:src="@drawable/jeonha_main_icon"/>
 
-</RelativeLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_alignParentRight="true"
+                   android:layout_margin="4dp"
+                   android:padding="12dp"
+                   android:src="@drawable/mypage_icon"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".Main.MainActivity">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="243dp"
+                            android:background="#f4f2f2">
+
+                <Switch android:id="@+id/switch_main_main_act_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="42.5dp"
+                        android:thumb="@drawable/switch_thumb_selector"
+                        android:track="@drawable/switch_track_selector"/>
+
+                <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/switch_main_main_act_selector"
+                        android:scrollbars="none"
+                        android:layout_marginTop="20.5dp">
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:orientation="horizontal">
+                        <ImageView
+                                android:id="@+id/iv_main_act_more_btn"
+                                android:src="@drawable/king_icon"
+                                android:layout_marginStart="32dp"
+                                android:padding="39dp"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <android.support.v7.widget.RecyclerView
+                                android:layout_below="@+id/switch_main_main_act_selector"
+                                android:layout_toRightOf="@+id/scr"
+                                android:id="@+id/rv_main_act_class_list"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        </android.support.v7.widget.RecyclerView>
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:paddingBottom="29dp">
+
+                <TextView
+                        android:id="@+id/tv_main_act_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="31dp"
+                        android:layout_marginTop="35dp"
+                        android:fontFamily="@font/noto_sans_cjkkr_bold"
+                        android:gravity="center_horizontal"
+                        android:text="Title"
+                        android:textColor="@color/dark"
+                        android:textSize="20sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_main_act_title_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_below="@+id/tv_main_act_title"
+                        android:layout_centerHorizontal="true">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
