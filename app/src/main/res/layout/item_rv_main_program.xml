@@ -1,86 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".Main.MainActivity">
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp">
-            <ImageView
-                    android:id="@+id/iv_main_QRtest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:padding="12dp"
-                    android:src="@drawable/qr_icon"/>
+        android:id="@+id/rv_item_main_program_list_container"
+        android:layout_width="wrap_content" android:layout_height="99dp"
+        android:layout_marginStart="8dp">
 
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                       android:layout_centerInParent="true"
-                       android:src="@drawable/jeonha_main_icon"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cv_item_main_program_list_img"
+            android:layout_width="99dp" android:layout_height="99dp"
+            android:src="#FFFFFF"/>
 
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                       android:layout_alignParentRight="true"
-                       android:layout_margin="4dp"
-                       android:padding="12dp"
-                       android:src="@drawable/mypage_icon"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cv_item_main_program_list_cocer"
+        android:layout_width="99dp" android:layout_height="99dp"
+        android:src="#4D000000"/>
 
-        </RelativeLayout>
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="243dp"
-                        android:background="#f4f2f2">
-
-            <Switch android:id="@+id/switch_main_main_act_selector"
-                    android:layout_width="197dp"
-                    android:layout_height="39dp"
-                    android:layout_marginStart="32dp" android:layout_marginTop="42.5dp"/>
-
-            <HorizontalScrollView
-                    android:layout_below="@+id/switch_main_main_act_selector"
-                    android:layout_marginTop="20.5dp"
-                    android:layout_width="match_parent" android:layout_height="100dp">
-
-                <ImageView
-                        android:id="@+id/iv_main_act_more_btn"
-                        android:layout_marginStart="32dp"
-                        android:layout_width="99dp" android:layout_height="99dp"/>
-
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/rv_main_act_class_list"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content">
-                </android.support.v7.widget.RecyclerView>
-            </HorizontalScrollView>
-
-
-        </RelativeLayout>
-
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:paddingBottom="29dp">
-
-            <TextView
-                    android:id="@+id/tv_main_act_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="31dp"
-                    android:layout_marginTop="35dp"
-                    android:fontFamily="@font/noto_sans_cjkkr_bold"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/dark"
-                    android:textSize="20sp"
-                    android:text="Title"/>
-
-            <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_main_act_title_list"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_main_act_title">
-
-            </android.support.v7.widget.RecyclerView>
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-</ScrollView>
+    <TextView
+            android:id="@+id/cv_item_main_program_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="숙소명"
+            android:textColor="#ffffff"
+            android:textSize="14sp"/>
+</RelativeLayout>

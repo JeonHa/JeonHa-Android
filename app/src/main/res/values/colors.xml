@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#2e394a</color>
+    <color name="colorPrimaryDark">#474747</color>
+    <color name="colorAccent">#f3505A</color>
 
     <!--추가-->
     <color name="watermelon">#f3505a</color>
