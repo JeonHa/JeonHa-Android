@@ -31,11 +31,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
 
-    private val hasFineLocationPermission =
-        ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-    private val hasCoarseLocationPermission =
-        ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-
 
     private var fusedLocationClient: FusedLocationProviderClient? = null
     private var location: Location? = null
@@ -86,6 +81,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun getPermission() {
 
+        val hasFineLocationPermission =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+        val hasCoarseLocationPermission =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
             /**
              * 권한을 허용했다면 위치를 요청합니다.
@@ -123,6 +123,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     private fun requestLocation() {
+
+        val hasFineLocationPermission =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+        val hasCoarseLocationPermission =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
         if (hasFineLocationPermission != PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission != PackageManager.PERMISSION_GRANTED) {
             /**
              * 권한 요청이 허가되어 있지 않은 경우
