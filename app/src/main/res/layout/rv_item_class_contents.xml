@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="192dp">
+    <ImageView
+            android:background="#111111"
+            android:id="@+id/iv_rv_class_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <TextView
+            android:id="@+id/tv_class_day"
+            android:fontFamily="@font/noto_sans_cjkkr_regular"
+            android:includeFontPadding="false"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:text="월요일·수요일·금요일"
+            />
+    <TextView
+            android:id="@+id/tv_class_classname"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
+            android:layout_below="@+id/tv_class_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="다도하면서 힐링하기"
+            />
+</RelativeLayout>
