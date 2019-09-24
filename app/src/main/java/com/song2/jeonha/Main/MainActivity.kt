@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
+import com.song2.jeonha.Class.ClassListActivity
 import com.song2.jeonha.Main.QRcode.QRcodeActivity
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,6 +32,10 @@ class MainActivity : AppCompatActivity() {
             startActivity<QRcodeActivity>()
         }
 
+        iv_main_act_more_btn.setOnClickListener {
+            startActivity<ClassListActivity>()
+        }
+
         setClassProgramRecyclerView()
         setTitleRecyclerView()
 
@@ -45,11 +50,6 @@ class MainActivity : AppCompatActivity() {
         arrayListData.add(ProgramData(4,"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg","한복 체험"))
         arrayListData.add(ProgramData(5,"https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75","전통 차 만들기"))
         arrayListData.add(ProgramData(6,"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg","한복 체험"))
-/*
-        arrayListData.add(ProgramData(2,"http://mblogthumb3.phinf.naver.net/20130325_206/tramedi_expo_1364189236351TsOnD_JPEG/%C7%D1%BE%E0_%B4%D9%B8%AE%B1%E2_3.jpg?type=w420","한약 다리기"))
-        arrayListData.add(ProgramData(3,"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg","한복 체"))
-        arrayListData.add(ProgramData(4,"http://mblogthumb3.phinf.naver.net/20130325_206/tramedi_expo_1364189236351TsOnD_JPEG/%C7%D1%BE%E0_%B4%D9%B8%AE%B1%E2_3.jpg?type=w420","한약 다리기"))
-*/
 
         programListRecyclerViewAdapter = ProgramListRecyclerViewAdapter(this, arrayListData)
         rv_main_act_class_list.adapter = programListRecyclerViewAdapter
