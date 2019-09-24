@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_item_class_container"
+                android:layout_width="match_parent"
+                android:layout_height="191dp"
+                android:layout_marginBottom="4dp">
+    <ImageView
+            android:id="@+id/iv_item_class_list_img"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@color/dark"/>
+
+    <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/tv_item_class_list_day"
+                android:fontFamily="@font/noto_sans_cjkkr_regular"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="월요일·수요일·금요일"
+                android:textColor="#ffffff"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/tv_item_class_list_title"
+                android:fontFamily="@font/noto_sans_cjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="다도하면서 힐링하기"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

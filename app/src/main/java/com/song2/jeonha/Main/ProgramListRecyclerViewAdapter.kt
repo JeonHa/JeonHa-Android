@@ -39,7 +39,7 @@ class ProgramListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<P
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var programImg = itemView.findViewById(R.id.cv_item_main_program_list_img) as CircleImageView
-        var programTitle = itemView.findViewById(R.id.cv_item_main_program_list_title) as TextView
+        var programTitle = itemView.findViewById(R.id.iv_item_main_program_list_title) as TextView
         var container = itemView.findViewById(R.id.rv_item_main_program_list_container) as RelativeLayout
     }
 
