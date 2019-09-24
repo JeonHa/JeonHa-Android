@@ -9,6 +9,7 @@ import android.os.Looper
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
+import android.view.View
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -16,12 +17,25 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.song2.jeonha.Map.data.MapData
+import com.song2.jeonha.Network.ApplicationController
+import com.song2.jeonha.Network.Get.GetHanokMapResponse
+import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
+import kotlinx.android.synthetic.main.activity_map.*
 import org.jetbrains.anko.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback,
     ActivityCompat.OnRequestPermissionsResultCallback {
+
+    val networkService: NetworkService by lazy {
+        ApplicationController.instance.networkService
+    }
 
     val TAG: String = "MapActivity TAG"
 
@@ -38,6 +52,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private var currentLatLng: LatLng? = null
 
+    private var markerList: ArrayList<Marker>? = ArrayList()
+
     var mMap: GoogleMap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +64,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
         getPermission()
         createLocationRequest()
         addMap()
+        getHanokMapResponse()
     }
 
     internal var locationCallback: LocationCallback = object : LocationCallback() {
@@ -76,7 +93,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
         mMap!!.addMarker(markerOptions)
         mMap!!.moveCamera(CameraUpdateFactory.newLatLng(currentLatLng))
-        mMap!!.animateCamera(CameraUpdateFactory.zoomTo(15f))
+        mMap!!.animateCamera(CameraUpdateFactory.zoomTo(5f))
     }
 
     private fun getPermission() {
@@ -118,8 +135,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun createLocationRequest() {
         locationRequest = LocationRequest()
-            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY) //create a location request
-            .setInterval(60 * 1000) //이 메소드는 앱에서 위치 업데이트 수신간격을 밀리초단위로 설정한다.
+            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+            .setInterval(60 * 1000) //위치 업데이트 수신간격(밀리초 단위)
     }
 
     private fun requestLocation() {
@@ -148,8 +165,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
             locationCallback,
             Looper.myLooper()
         )
-
-
     }
 
     private fun addMap() {
@@ -181,8 +196,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
             it.moveCamera(CameraUpdateFactory.newLatLng(defaultLocation))
             it.animateCamera(CameraUpdateFactory.zoomTo(15f))
         }
-
-
     }
 
     override fun onStop() {
@@ -192,4 +205,75 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
         if (fusedLocationClient != null)
             fusedLocationClient!!.removeLocationUpdates(locationCallback)
     }
+
+    fun getHanokMapResponse() {
+        val getHanokMapResponse = networkService.getHanokMapResponse("application/json")
+        getHanokMapResponse.enqueue(object : Callback<GetHanokMapResponse> {
+            override fun onFailure(call: Call<GetHanokMapResponse>, t: Throwable) {
+                Log.e("MapResponse fail", t.toString())
+            }
+
+            override fun onResponse(
+                call: Call<GetHanokMapResponse>,
+                response: Response<GetHanokMapResponse>
+            ) {
+                if (response.isSuccessful) {
+                    if (response.body()!!.status == 200) {
+                        val mapDataList: ArrayList<MapData> = response.body()!!.data!!
+                        floatMarker(mapDataList)
+                        Log.d(TAG, mapDataList.toString())
+
+                    }
+                }
+            }
+        })
+    }
+
+    private fun floatMarker(items: ArrayList<MapData>) {
+        markerList!!.clear()
+        /*for (i in items.indices) {
+            val markerLatLng = LatLng(items[i].latitude, items[i].longitude)
+            val markerOptions = MarkerOptions()
+            markerOptions.position(markerLatLng)
+//                    .title(items[i].name)
+//                    .snippet(items[i].place())
+            val marker: Marker = mMap!!.addMarker(markerOptions)
+
+            markerList!!.add(i, marker)
+        }*/
+
+        val markerOptions = MarkerOptions().position(LatLng(37.56, 126.97))
+        val marker: Marker = mMap!!.addMarker(markerOptions)
+        markerList!!.add(0,marker)
+        setMarkerClickListener(mMap,items)
+    }
+
+    private fun setMarkerClickListener(
+        mMap: GoogleMap?,
+        mapDataList: ArrayList<MapData>
+    ) {
+        mMap!!.setOnMarkerClickListener {
+            var idx: Int = -1
+
+            for (i in 0 until markerList!!.size) {
+                markerList!![i].tag = markerList!![i] == it
+
+                if (markerList!![i].tag == true) idx = i
+                Log.v("마커 클릭 ", i.toString() + " 는 " + markerList!![i].tag)
+            }
+
+            setHanokDetailView(idx,mapDataList)
+            return@setOnMarkerClickListener false
+        }
+    }
+
+    private fun setHanokDetailView(
+        idx: Int,
+        mapDataList: ArrayList<MapData>
+    ) {
+        ll_map_act_info.visibility = View.VISIBLE
+        txt_map_act_stay_region.text = mapDataList[idx].place
+        txt_map_act_stay_hanok_name.text = mapDataList[idx].name
+    }
+
 }
