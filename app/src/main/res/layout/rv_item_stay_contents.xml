@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="263dp">
+<ImageView
+        android:id="@+id/iv_rv_stay_img"
+        android:src="@drawable/splash_img"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="177dp"/>
+    <TextView
+            android:id="@+id/tv_rv_stay_classname"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/iv_rv_stay_img"
+            android:fontFamily="@font/noto_sans_cjkkr_regular"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/dark"
+            android:text="한옥체험업"
+            />
+    <View
+            android:layout_toRightOf="@+id/tv_rv_stay_classname"
+            android:id="@+id/v_rv_lin"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="14dp"
+            android:background="#ced4da"
+            android:layout_below="@+id/iv_rv_stay_img"
+            android:layout_width="1dp"
+            android:layout_height="11dp"
+            />
+    <TextView
+            android:layout_toRightOf="@+id/v_rv_lin"
+            android:id="@+id/tv_rv_stay_summery_place"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/iv_rv_stay_img"
+            android:fontFamily="@font/noto_sans_cjkkr_regular"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/dark"
+            android:text="청계천 종로"
+            />
+    <TextView
+            android:id="@+id/tv_rv_stay_class_place_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/iv_rv_stay_img"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/dark"
+            android:text="누리한옥게스트하우스"
+            />
+    <TextView
+            android:id="@+id/tv_rv_stay_class_address"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="56dp"
+            android:layout_below="@+id/iv_rv_stay_img"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#868e96"
+            android:text="서울시 종로구 체부동 147-1"
+            />
+</RelativeLayout>
