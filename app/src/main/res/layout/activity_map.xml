@@ -17,7 +17,104 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/ll_map_act_info"
             android:layout_below="@+id/toolbar_map"
             tools:context=".Map.MapActivity" />
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_map_act_go_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/ll_map_act_info"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/white"
+            android:outlineAmbientShadowColor="#33000000"
+            android:outlineSpotShadowColor="#f4f2f2"
+            android:src="@drawable/list_icon"
+            android:visibility="gone"
+            app:borderWidth="0dp" />
+
+
+    <LinearLayout
+            android:id="@+id/ll_map_act_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/txt_map_act_stay_hanok_name"
+                    style="@style/BlackMediumFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="8sp"
+                    android:text="한옥명"
+                    android:textSize="20sp" />
+
+            <ImageView
+                    android:id="@+id/img_map_act_detail_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingHorizontal="9.5dp"
+                    android:src="@drawable/arrow_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/BlackRegularFontStyle"
+                    android:layout_width="77dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="14sp"
+                    android:text="숙소형태"
+                    android:textSize="14sp" />
+
+            <TextView
+                    android:id="@+id/txt_map_act_stay_type"
+                    style="Black54RegularFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    tools:text="숙소형태가 여기로 올것이당." />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/BlackRegularFontStyle"
+                    android:layout_width="77dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="14sp"
+                    android:text="지역"
+                    android:textSize="14sp" />
+
+
+            <TextView
+                    android:id="@+id/txt_map_act_stay_region"
+                    style="Black54RegularFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    tools:text="지역 여기로 올것이당." />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

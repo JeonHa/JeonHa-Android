@@ -9,6 +9,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
 import com.song2.jeonha.Class.ClassListActivity
+import com.google.zxing.integration.android.IntentResult
+import com.song2.jeonha.Main.Mypage.MypageActivity
 import com.song2.jeonha.Main.QRcode.QRcodeActivity
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,6 +28,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        iv_main_mypage.setOnClickListener {
+            startActivity<MypageActivity>()
+        }
+
 
         iv_main_QRtest.setOnClickListener {
             onQrcodeScanner()

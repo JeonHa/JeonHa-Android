@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:dividerPadding="1dp">
+    <RelativeLayout
+            android:id="@+id/rl_tap_stay_apply_all"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+        <TextView
+                android:text="스테이"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:textColor="#868e96"
+
+                android:fontFamily="@font/noto_sans_cjkkr_bold"
+                android:includeFontPadding="false"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/rl_tap_class_apply_all"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+        <TextView
+                android:text="클래스"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:textColor="#868e96"
+                android:fontFamily="@font/noto_sans_cjkkr_bold"
+                android:includeFontPadding="false"/>
+    </RelativeLayout>
+
+</LinearLayout>

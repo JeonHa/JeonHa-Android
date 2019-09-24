@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Main.Mypage.ApplyHistoryActivity">
+    <RelativeLayout
+            android:paddingBottom="20dp"
+            android:elevation="10dp"
+            android:background="#2e394a"
+            android:id="@+id/rl_apply_topbar"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        <TextView
+                android:fontFamily="@font/noto_sans_cjkkr_medium"
+                android:includeFontPadding="false"
+                android:layout_marginLeft="72dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:text="신청내역"
+                />
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_below="@+id/rl_apply_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/tl_apply_tabbar"
+            app:tabBackground = "@android:color/transparent"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/watermelon"
+            />
+        <android.support.v4.view.ViewPager
+                android:layout_below="@+id/tl_apply_tabbar"
+                android:id="@+id/vp_apply_contents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

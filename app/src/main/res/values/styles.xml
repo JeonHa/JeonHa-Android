@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">#242d3b</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -13,5 +13,28 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <color name="white">#ffffff</color>
+    <style name="BlackMediumFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="BlackRegularFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="DarkMediumFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_medium</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="DarkBoldFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_bold</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="Black54RegularFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_regular</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
 </resources>

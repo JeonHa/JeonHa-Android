@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Main.Mypage.MypageActivity">
+<RelativeLayout
+        android:paddingBottom="20dp"
+        android:elevation="10dp"
+        android:background="#2e394a"
+        android:id="@+id/rl_mypage_topbar"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+    <TextView
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="72dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="마이페이지"
+            />
+</RelativeLayout>
+<RelativeLayout
+        android:background="#2e394a"
+        android:layout_below="@+id/rl_mypage_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/tv_mypage_name"
+            android:fontFamily="@font/noto_sans_cjkkr_light"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="8sp"
+            android:text="김은혜님\n오늘도\n강녕하시옵소서"
+            />
+
+</RelativeLayout>
+
+
+</RelativeLayout>

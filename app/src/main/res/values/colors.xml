@@ -8,4 +8,7 @@
     <color name="watermelon">#f3505a</color>
     <color name="dark">#2e394a</color>
     <color name="greyish_brown">#474747</color>
+    <color name="black_54">#8a000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 </resources>
