@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/white_gray_border_1dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/img_hanok_rv_item_thumb"
+                android:layout_width="match_parent"
+                android:layout_height="177dp"
+                tools:background="@color/watermelon" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/txt_hanok_rv_item_type"
+                    style="@style/DarkRegularFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    tools:text="한옥체험업" />
+
+            <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8.5dp"
+                    android:layout_marginVertical="3dp"
+                    android:background="#f4f2f2" />
+
+            <TextView
+                    android:id="@+id/txt_hanok_rv_item_region"
+                    style="@style/BlackRegularFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    tools:text="청계천ㆍ종로" />
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/txt_hanok_rv_item_name"
+                style="@style/DarkMediumFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="16sp"
+                tools:text="누리한옥게스트하우스" />
+
+        <TextView
+                android:id="@+id/txt_hanok_rv_item_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                android:textSize="12sp"
+                tools:text="서울시 종로구 제부동 147-1" />
+
+    </LinearLayout>
+
+</RelativeLayout>

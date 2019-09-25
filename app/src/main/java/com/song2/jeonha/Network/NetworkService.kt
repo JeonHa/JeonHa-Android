@@ -1,6 +1,7 @@
 package com.song2.jeonha.Network
 
 import com.google.gson.JsonObject
+import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -19,7 +20,17 @@ interface NetworkService {
      */
     @GET("/hanok?type=map")
     fun getHanokMapResponse(
-        @Header("Content-Type") content_type : String
+        @Header("Content-Type") content_type: String
     ): Call<GetHanokMapResponse>
+
+    /**
+     * 소희
+     * 한옥리스트
+     */
+    @GET("/hanok?type=list&sort={sort}")
+    fun getHanokListResponse(
+        @Header("Content-Type") content_type: String,
+        @Path("sort") sort: Int
+    ): Call<GetHanokListResponse>
 
 }
