@@ -6,6 +6,25 @@
         android:layout_height="match_parent"
         android:background="#A6111111"
         tools:context=".Main.QRcode.QRcodeActivity">
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/dark">
+        <ImageView
+                android:id="@+id/iv_qrcode_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:padding="8dp"
+                android:src="@drawable/arrow_back_icon"/>
+        <TextView
+                android:id="@+id/bt_flash"
+                android:layout_marginLeft="36dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QR코드 스캔"
+                android:textColor="#ffffff"
+                android:textSize="20sp"/>
+    </android.support.v7.widget.Toolbar>
+
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
             android:id="@+id/db_qr"
             android:layout_marginTop="120dp"
@@ -13,23 +32,18 @@
             android:layout_height="300dp"
 
        android:layout_centerHorizontal="true" />
-    <TextView
 
-            android:id="@+id/bt_flash"
-            android:layout_margin="16dp"
-            android:textColor="#ffffff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zxing_msg_default_status"
-            />
     <TextView
             android:layout_marginBottom="126dp"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/db_qr"
+            android:layout_marginTop="54dp"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="13sp"
             android:textColor="#ffffff"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
             android:gravity="center_horizontal"
             android:text="해당 전통강좌\n한옥스테이 장소의
 QR코드를 스캔해주세요!"

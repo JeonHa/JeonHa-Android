@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,22 +20,31 @@ public class QRcodeActivity extends AppCompatActivity implements  DecoratedBarco
 
     private CaptureManager manager;
     private boolean isFlashOn = false;// 플래시가 켜져 있는지
-
-
+    private ImageView iv_qrcode_back;
     private TextView btFlash;
     private DecoratedBarcodeView barcodeView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrcode);
-
+        iv_qrcode_back =findViewById(R.id.iv_qrcode_back);
         barcodeView = findViewById(R.id.db_qr);
+
 
         manager = new CaptureManager(this,barcodeView);
         manager.initializeFromIntent(getIntent(),savedInstanceState);
         manager.decode();
 
         btFlash = findViewById(R.id.bt_flash);
+
+        iv_qrcode_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             finish();
+            }
+        });
+
+
         btFlash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

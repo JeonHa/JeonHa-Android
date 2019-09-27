@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <include
+            layout="@layout/toolbar_hanok_filter"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <LinearLayout
+            android:paddingTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="17dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+            <TextView
+                    style="@style/DarkMediumFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한옥에서 "
+                    android:textSize="20sp" />
+
+            <TextView
+                    style="@style/DarkBoldFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="왕처럼 살아보기"
+                    android:textSize="20sp" />
+
+            <ImageView
+                    android:id="@+id/img_hanok_filter_act_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/filter_icon" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_marginHorizontal="16dp"
+                android:id="@+id/rv_hanok_filter_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
