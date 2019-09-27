@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         iv_main_QRtest.setOnClickListener {
             onQrcodeScanner()
-            startActivity<QRcodeActivity>()
         }
 
         iv_main_act_more_btn.setOnClickListener {
@@ -129,7 +128,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun onQrcodeScanner() {
 
-        Toast.makeText(this, "Camera", Toast.LENGTH_SHORT).show()
 
         val integrator = IntentIntegrator(this)
         integrator.setBeepEnabled(false)
