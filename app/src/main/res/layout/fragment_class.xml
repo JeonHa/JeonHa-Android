@@ -7,7 +7,7 @@
         android:background="#ffffff"
         tools:context=".Main.Mypage.MyPageFragment.ClassFragment">
     <ScrollView
-            android:layout_marginHorizontal="16dp"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <LinearLayout
@@ -15,10 +15,12 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
             <LinearLayout
+                    android:layout_marginTop="17dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="32dp">
                 <ImageView
+                        android:layout_marginLeft="16dp"
                         android:src="@drawable/king_icon"
                         android:layout_width="32dp"
                         android:layout_height="32dp"></ImageView>
@@ -32,7 +34,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
                         android:textColor="#4a4a4a"
-                        android:text="3개 신청하였소"
+                        android:text="0개 신청하였소"
                         />
             </LinearLayout>
 

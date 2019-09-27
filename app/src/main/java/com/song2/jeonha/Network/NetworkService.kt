@@ -1,6 +1,8 @@
 package com.song2.jeonha.Network
 
 import com.google.gson.JsonObject
+import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
+import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
@@ -39,4 +41,15 @@ interface NetworkService {
     fun getStampResponse(
         @Header("authorization") token: String
     ): Call<GetStampResponse>
+
+    //클래스 조회
+    @GET("/user/reservation?type=class")
+    fun getClassBookingListResponse(
+        @Header("authorization") token: String
+    ): Call<GetBookingClassListResponse>
+    //한옥 스테이 조회
+    @GET("/user/reservation?type=hanok")
+    fun getHanokBookingListResponse(
+        @Header("authorization") token: String
+    ): Call<GetBookingHanokListResponse>
 }

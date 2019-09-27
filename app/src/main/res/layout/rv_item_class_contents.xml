@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+        android:id="@+id/rl_item_class_all_contents"
+        android:layout_marginBottom="4dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent" android:layout_height="192dp">
     <ImageView
-            android:background="#111111"
+            android:scaleType="centerCrop"
             android:id="@+id/iv_rv_class_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+        android:id="@+id/rl_item_stay_all"
         android:layout_marginTop="16dp"
         android:background="#ffffff"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent" android:layout_height="263dp">
 <ImageView
         android:id="@+id/iv_rv_stay_img"
-        android:src="@drawable/splash_img"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="177dp"/>

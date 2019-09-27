@@ -72,12 +72,13 @@ class MypageActivity : AppCompatActivity() {
             ) {
                 if(response.isSuccessful){
                     if(response.body()!!.status == 200){
-                        for (i in 0..response.body()!!.data.size-1) {
+                        tv_mypage_name.text=response.body()!!.data.userName+"님\n오늘도\n강녕하시옵소서"
+                        for (i in 0..response.body()!!.data.stampList.size-1) {
 
                            val INDEX: Int
                             INDEX = i
                             ImageView[i] = findViewById(Rid_ImageView[i]) as ImageView
-                           Glide.with(this@MypageActivity).load(response.body()!!.data[i]!!.img).into(
+                           Glide.with(this@MypageActivity).load(response.body()!!.data.stampList[i]!!.img).into(
                                ImageView[INDEX]!!
                            )
                         }

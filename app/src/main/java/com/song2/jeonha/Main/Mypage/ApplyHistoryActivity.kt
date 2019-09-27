@@ -14,6 +14,9 @@ class ApplyHistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apply_history)
+        iv_apply_history_back_btn.setOnClickListener {
+            finish()
+        }
     }
 
     override fun onResume() {
