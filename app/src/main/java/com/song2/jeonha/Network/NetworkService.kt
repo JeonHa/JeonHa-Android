@@ -6,6 +6,10 @@ import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHa
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.Post.PostUserLogin
+import com.song2.jeonha.Network.Post.PostUserSignUp
+import com.song2.jeonha.Network.Post.Response.PostUserLoginResponse
+import com.song2.jeonha.Network.Post.Response.PostUserSignUpResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -52,4 +56,21 @@ interface NetworkService {
     fun getHanokBookingListResponse(
         @Header("authorization") token: String
     ): Call<GetBookingHanokListResponse>
+
+    /**
+     * 다예
+     * Sign
+     */
+
+    @POST("/user/signin")
+    fun postUserLogin(
+        @Body authorization: PostUserLogin
+    ): Call<PostUserLoginResponse>
+
+    @POST("/user/signup")
+    fun postUserSignUp(
+        @Body authorization: PostUserSignUp
+    ): Call<PostUserSignUpResponse>
+
 }
+
