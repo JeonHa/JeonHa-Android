@@ -2,4 +2,7 @@
     <string name="app_name">JeonHa</string>
     <string name="forgetIDPW"><u>아이디/비밀번호를 잊으셨나요?</u></string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -1,9 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F4F2F2"
         tools:context=".Login.SignUpActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <include
+            android:id="@+id/toolbar_signup"
+            layout="@layout/toolbar_signup" />
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_signup"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="56dp">
+
+
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp">
+                <ImageView
+                        android:id="@+id/img_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/join_path"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="22sp"
+                        android:textColor="#2e394a"
+                        tools:text="회원가입"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="53dp">
+
+
+            <LinearLayout
+                    android:id="@+id/ll_ac_login_name_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="이름"
+                        android:background="@null"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColorHint="#CECECE"/>
+
+            </LinearLayout>
+
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#474747"
+                    android:layout_below="@id/ll_ac_login_name_space"
+                    android:layout_marginTop="9dp"/>
+
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginHorizontal="53dp">
+
+
+            <LinearLayout
+                    android:id="@+id/ll_ac_login_id_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="아이디"
+                        android:background="@null"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColorHint="#CECECE"/>
+
+            </LinearLayout>
+
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#474747"
+                    android:layout_below="@id/ll_ac_login_id_space"
+                    android:layout_marginTop="9dp"/>
+
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginHorizontal="53dp">
+
+
+            <LinearLayout
+                    android:id="@+id/ll_ac_login_pw_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="비밀번호"
+                        android:background="@null"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColorHint="#CECECE"/>
+
+            </LinearLayout>
+
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#474747"
+                    android:layout_below="@id/ll_ac_login_pw_space"
+                    android:layout_marginTop="9dp"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginHorizontal="53dp">
+
+
+            <LinearLayout
+                    android:id="@+id/ll_ac_login_pw_check_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="비밀번호 확인"
+                        android:background="@null"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColorHint="#CECECE"/>
+
+            </LinearLayout>
+
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#474747"
+                    android:layout_below="@id/ll_ac_login_pw_check_space"
+                    android:layout_marginTop="9dp"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginHorizontal="53dp">
+
+
+            <LinearLayout
+                    android:id="@+id/ll_ac_login_phone_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="핸드폰 번호"
+                        android:background="@null"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColorHint="#CECECE"/>
+
+            </LinearLayout>
+
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#474747"
+                    android:layout_below="@id/ll_ac_login_phone_space"
+                    android:layout_marginTop="9dp"/>
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ced4da">
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:layout_centerInParent="true"
+                android:text="회원가입 완료" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
