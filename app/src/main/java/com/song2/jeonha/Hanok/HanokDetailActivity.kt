@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.song2.jeonha.Hanok.data.Rooms
 import com.song2.jeonha.R
-import kotlinx.android.synthetic.main.activity_hanok_datail.*
+import kotlinx.android.synthetic.main.activity_hanok_detail.*
 
-class HanokDatailActivity : AppCompatActivity() {
+class HanokDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hanok_datail)
+        setContentView(R.layout.activity_hanok_detail)
 
 
 

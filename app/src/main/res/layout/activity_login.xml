@@ -11,6 +11,7 @@
 
 
     <LinearLayout
+            android:id="@+id/li_ac_login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -46,9 +47,11 @@
                         android:src="@drawable/king"/>
 
                 <EditText
+                        android:id="@+id/et_ac_login_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="아이디"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
                         android:background="@null"
                         android:layout_marginLeft="8dp"
                         android:layout_gravity="center_vertical"
@@ -90,11 +93,14 @@
                         android:src="@drawable/king"/>
 
                 <EditText
+                        android:id="@+id/et_ac_login_pw"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="비밀번호"
+                        android:inputType="textPassword"
                         android:background="@null"
                         android:layout_marginLeft="8dp"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
 
@@ -134,6 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:textColor="#ffffff"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
                         android:text="로그인"/>
 
 
@@ -155,6 +162,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
                         android:textColor="#ffffff"
                         android:text="회원가입"/>
 
@@ -164,20 +172,25 @@
 
         </RelativeLayout>
 
-
-
     </LinearLayout>
 
 
+
+
     <TextView
+            android:id="@+id/tv_ac_login_forget_idpw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:textColor="#868e96"
-            android:layout_marginBottom="45dp"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/noto_sans_cjkkr_regular"
             android:text="@string/forgetIDPW"/>
+
+
+
 
 
 </RelativeLayout>

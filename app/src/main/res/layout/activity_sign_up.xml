@@ -43,7 +43,8 @@
                         android:layout_centerInParent="true"
                         android:textSize="22sp"
                         android:textColor="#2e394a"
-                        tools:text="회원가입"/>
+                        android:fontFamily="@font/noto_sans_cjkkr_medium"
+                        android:text="회원가입"/>
 
             </RelativeLayout>
 
@@ -64,6 +65,7 @@
 
 
                 <EditText
+                        android:id="@+id/et_ac_sign_up_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="이름"
@@ -104,6 +106,7 @@
 
 
                 <EditText
+                        android:id="@+id/et_ac_sign_up_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="아이디"
@@ -144,9 +147,11 @@
 
 
                 <EditText
+                        android:id="@+id/et_ac_sign_up_pw"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="비밀번호"
+                        android:inputType="textPassword"
                         android:background="@null"
                         android:layout_marginLeft="8dp"
                         android:layout_gravity="center_vertical"
@@ -182,10 +187,12 @@
 
 
                 <EditText
+                        android:id="@+id/et_ac_sign_up_pw_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="비밀번호 확인"
                         android:background="@null"
+                        android:inputType="textPassword"
                         android:layout_marginLeft="8dp"
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
@@ -220,6 +227,7 @@
 
 
                 <EditText
+                        android:id="@+id/et_ac_sign_up_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="핸드폰 번호"
@@ -249,6 +257,7 @@
 
 
     <RelativeLayout
+            android:id="@+id/btn_ac_signup_ok"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:layout_alignParentBottom="true"
