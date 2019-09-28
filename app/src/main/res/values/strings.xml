@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">JeonHa</string>
-    <string name="toolbar_map">한옥스테이</string>
+    <string name="toolbar_map">한옥 스테이</string>
     <string name="forgetIDPW"><u>아이디/비밀번호를 잊으셨나요?</u></string>
 
     <string name="toolbar_hanok_list">한옥 스테이</string>
