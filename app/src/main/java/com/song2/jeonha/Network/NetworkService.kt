@@ -5,6 +5,7 @@ import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingCl
 import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
+import com.song2.jeonha.Network.Get.GetMainResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
 import com.song2.jeonha.Network.Post.PostUserLogin
 import com.song2.jeonha.Network.Post.PostUserSignUp
@@ -73,6 +74,19 @@ interface NetworkService {
     ): Call<PostUserSignUpResponse>
 
 
+    //GET
+    @GET("/main")
+    fun getMainResponse(
+        @Header("authorization") token: String
+    ): Call<GetMainResponse>
+/*
+
+    @GET("/class")
+    fun getaClassListResponse(
+        @Header("authorization") token: String,
+        @Query ("day") sort : Int
+    ): Call<GetClassListResponse>
+*/
 
 }
 
