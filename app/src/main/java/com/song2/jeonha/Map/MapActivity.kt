@@ -109,7 +109,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
         mMap!!.addMarker(markerOptions)
         mMap!!.moveCamera(CameraUpdateFactory.newLatLng(currentLatLng))
-        mMap!!.animateCamera(CameraUpdateFactory.zoomTo(5f))
+        mMap!!.animateCamera(CameraUpdateFactory.zoomTo(13f))
     }
 
     private fun getPermission() {
@@ -273,12 +273,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
                 markerList!![i].tag = markerList!![i] == it
 
                 if (markerList!![i].tag == true) idx = i
-                Log.v("마커 클릭 ", i.toString() + " 는 " + markerList!![i].tag)
             }
 
             setOnDetailBtnClickListener(mapDataList, idx)
 
-            setHanokDetailView(idx, mapDataList)
+            if(idx != -1) setHanokDetailView(idx, mapDataList)
 
             return@setOnMarkerClickListener false
         }
