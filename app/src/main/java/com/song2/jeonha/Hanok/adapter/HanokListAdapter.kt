@@ -12,7 +12,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.song2.jeonha.Hanok.HanokDatailActivity
+import com.song2.jeonha.Hanok.HanokDetailActivity
 import com.song2.jeonha.Hanok.data.HanokItem
 import com.song2.jeonha.R
 
@@ -35,7 +35,7 @@ class HanokListAdapter(var ctx: Context, var dataList: ArrayList<HanokItem>) :
         Glide.with(ctx).load(dataList[p1].img).into(p0.thumb)
 
         p0.container.setOnClickListener {
-            val intent: Intent = Intent(ctx, HanokDatailActivity::class.java)
+            val intent: Intent = Intent(ctx, HanokDetailActivity::class.java)
             intent.putExtra("idx", dataList[p1].hanokIdx)
 
             Log.d("idx::", dataList[p1].hanokIdx.toString())
