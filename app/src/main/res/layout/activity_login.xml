@@ -62,6 +62,7 @@
 
 
             <View
+                    android:id="@+id/v_login_id"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"
@@ -109,6 +110,7 @@
 
 
             <View
+                    android:id="@+id/v_login_pw"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"

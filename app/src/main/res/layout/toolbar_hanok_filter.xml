@@ -20,6 +20,6 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="32dp"
             android:gravity="center_vertical"
-            android:text="@string/toolbar_class_list"
+            android:text="@string/toolbar_hanok_list"
             android:textSize="20sp" />
 </LinearLayout>
