@@ -11,11 +11,12 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassListItemData
 import com.song2.jeonha.R
 import de.hdodenhof.circleimageview.CircleImageView
 
 
-class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassData>) : RecyclerView.Adapter<ClassListRecyclerViewAdapter.Holder>() {
+class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassListItemData>) : RecyclerView.Adapter<ClassListRecyclerViewAdapter.Holder>() {
 
     var CLASSIDX = "classIDX"
 
@@ -32,25 +33,27 @@ class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Cla
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
-        holder.classTitle.text = dataList[position].class_title
+        holder.classTitle.text = dataList[position].name
         //holder.classDay.text
         holder.container.setOnClickListener {
             //detailed 페이지로
             //ctx.startActivity<>()
         }
 
+        var store_day = dataList[position].weekday.split(" ") as ArrayList<String>
+
         var test = ""
-        for (i in 0..dataList[position].day!!.size-1){
+        for (i in 0..store_day.size-1){
             if(i !=0)
                 test +="·"
 
-            test += dataList[position].day!![i]
+            test += store_day[i]
         }
 
         holder.classDay.text = test
 
         Glide.with(ctx)
-            .load(dataList[position].class_img)
+            .load(dataList[position].img)
             .into(holder.classImg)
 
         holder.classImg.setColorFilter(Color.parseColor("#BDBDBD"), PorterDuff.Mode.MULTIPLY);

@@ -3,31 +3,34 @@ package com.song2.jeonha.Class
 import android.app.Dialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Window
 import android.widget.RadioButton
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
-import com.song2.jeonha.Main.ProgramData
-import com.song2.jeonha.Main.ProgramListRecyclerViewAdapter
+import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassListItemData
+import com.song2.jeonha.Network.ApplicationController
+import com.song2.jeonha.Network.Get.GetClassListResponse
+import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_class_list.*
-import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.ctx
+import retrofit2.Call
+import retrofit2.Response
 
 class ClassListActivity : AppCompatActivity() {
 
+    val networkService: NetworkService by lazy {
+        ApplicationController.instance.networkService
+    }
 
     lateinit var classListRecyclerViewAdapter: ClassListRecyclerViewAdapter
-    var arrayListData : ArrayList<ClassData> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_class_list)
 
-        setClassRecyclerView()
+        getClassListResponse(0)
 
         iv_class_list_act_filter_btn.setOnClickListener {
             clickFilterBtn()
@@ -63,25 +66,43 @@ class ClassListActivity : AppCompatActivity() {
         }
     }
 
-    fun setClassRecyclerView(){
 
-        var day : ArrayList<String> = ArrayList()
+    fun setClassRecyclerView(data: ArrayList<ClassListItemData>){
 
-        day.add("월요일")
-        day.add("화요일")
-        day.add("수요일")
+        Log.e("getProgramsKeywordResponse ㅅㅂㅅㅂ", data.size.toString())
 
-        arrayListData.add(ClassData(0,"https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75","전통 차 만들기", day))
-        arrayListData.add(ClassData(1,"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg","한복 체험", day))
-        arrayListData.add(ClassData(2,"https://file2.nocutnews.co.kr/newsroom/image/2011/09/07170436417004_61000040.jpg","떡메치기", day))
-        arrayListData.add(ClassData(3,"https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75","전통 차 만들기", day))
-        arrayListData.add(ClassData(4,"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg","한복 체험", day))
-        arrayListData.add(ClassData(5,"https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75","전통 차 만들기", day))
-        arrayListData.add(ClassData(6,"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg","한복 체험", day))
-
-        classListRecyclerViewAdapter = ClassListRecyclerViewAdapter(this, arrayListData)
+        classListRecyclerViewAdapter = ClassListRecyclerViewAdapter(this, data)
         rv_class_list_act_list.adapter = classListRecyclerViewAdapter
+        classListRecyclerViewAdapter.notifyDataSetChanged()
         rv_class_list_act_list.layoutManager = LinearLayoutManager(this)
 
+    }
+
+    fun getClassListResponse(day : Int) {
+
+        val getClassListResponse = networkService.getClassListResponse(day)
+
+        getClassListResponse.enqueue(object : retrofit2.Callback<GetClassListResponse> {
+            override fun onFailure(call: Call<GetClassListResponse>, t: Throwable) {
+                Log.e("getProgramsKeywordResponse fail", t.toString())
+            }
+
+            override fun onResponse(call: Call<GetClassListResponse>, response: Response<GetClassListResponse>) {
+                if (response.isSuccessful) {
+                        val responseData: GetClassListResponse = response.body()!!
+
+                        if (responseData.data.size > 0) {
+                            for (i in responseData.data.indices)
+                                Log.e("classList success", "test"+responseData.data[i].weekday)
+
+                            setClassRecyclerView(responseData.data)
+
+                        } else {
+                            Log.e("classList success", ":::test")
+                        }
+
+                }
+            }
+        })
     }
 }
