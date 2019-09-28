@@ -46,4 +46,13 @@
         <item name="android:textColor">@color/black_54</item>
     </style>
 
+    <style name="Black87RegularFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_regular</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+    <style name="Black87MediumFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_medium</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
 </resources>

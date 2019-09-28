@@ -34,10 +34,10 @@ interface NetworkService {
      * 소희
      * 한옥리스트
      */
-    @GET("/hanok?type=list&sort={sort}")
+    @GET("/hanok?type=list")
     fun getHanokListResponse(
         @Header("Content-Type") content_type: String,
-        @Path("sort") sort: Int
+        @Query("sort") sort: Int
     ): Call<GetHanokListResponse>
 
     //스탬프 조회
