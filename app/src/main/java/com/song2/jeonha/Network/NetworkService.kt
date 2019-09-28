@@ -3,6 +3,7 @@ package com.song2.jeonha.Network
 import com.google.gson.JsonObject
 import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
 import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
+import com.song2.jeonha.Network.Get.GetHanokDetailResponse
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
@@ -39,6 +40,18 @@ interface NetworkService {
         @Header("Content-Type") content_type: String,
         @Query("sort") sort: Int
     ): Call<GetHanokListResponse>
+
+    /**
+     * 소희
+     * 한옥디테일
+     */
+    @GET("/hanok/{hanokIdx}")
+    fun getHanokDetailResponse(
+        @Header("Content-Type") content_type: String,
+        @Path("hanokIdx") hanokIdx: Int
+    ): Call<GetHanokDetailResponse>
+
+
 
     //스탬프 조회
     @GET("/user/stamp")
