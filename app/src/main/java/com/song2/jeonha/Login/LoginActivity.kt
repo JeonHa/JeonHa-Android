@@ -12,9 +12,24 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        tv_next.setOnClickListener {
+
+
+        setOnClickListener()
+
+
+    }
+
+    private fun setOnClickListener() {
+
+        btn_ac_login_signin.setOnClickListener {
             startActivity<MainActivity>()
             finish()
         }
+
+        btn_ac_login_signup.setOnClickListener {
+            startActivity<SignUpActivity>()
+        }
+
+
     }
 }
