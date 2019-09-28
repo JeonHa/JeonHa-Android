@@ -5,5 +5,6 @@ data class MapData(
     val name : String,
     val latitude : Double,
     val longitude : Double,
+    val type : String,
     val place : String
 )
