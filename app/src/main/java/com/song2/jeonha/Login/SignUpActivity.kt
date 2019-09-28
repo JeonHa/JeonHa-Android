@@ -1,5 +1,6 @@
 package com.song2.jeonha.Login
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -42,6 +43,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
 
+
     }
 
 
@@ -59,6 +61,9 @@ class SignUpActivity : AppCompatActivity() {
             val input_pw: String = et_ac_sign_up_pw.text.toString()
             val input_name: String = et_ac_sign_up_name.text.toString()
             val input_phone: String = et_ac_sign_up_phone.text.toString()
+
+
+
 
 
 
@@ -80,10 +85,11 @@ class SignUpActivity : AppCompatActivity() {
                     response: Response<PostUserSignUpResponse>
                 ) {
                     if (response.isSuccessful) {
-                        
-
 
                         startActivity<MainActivity>()
+                        finish()
+
+
                     } else {
                         var message: String = response.body()!!.resMessage
                         Log.e("signup error","회원가입 에러"+message)

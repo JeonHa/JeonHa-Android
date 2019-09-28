@@ -34,7 +34,6 @@
                         android:id="@+id/img_logo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:src="@drawable/join_path"/>
 
                 <TextView
@@ -98,7 +97,7 @@
                 android:layout_marginHorizontal="53dp">
 
 
-            <LinearLayout
+            <RelativeLayout
                     android:id="@+id/ll_ac_login_id_space"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -115,7 +114,17 @@
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
 
-            </LinearLayout>
+                <TextView
+                        android:id="@+id/btn_ac_signup_checkid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_alignParentRight="true"
+                        android:textColor="#ced4da"
+                        android:text="중복확인"/>
+
+
+            </RelativeLayout>
 
 
 
