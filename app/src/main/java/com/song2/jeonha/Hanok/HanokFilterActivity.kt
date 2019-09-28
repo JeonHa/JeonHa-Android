@@ -36,7 +36,6 @@ class HanokFilterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanok_filter)
 
-
         getHanokListResponse(0)
         setOnBtnClickListener()
     }
