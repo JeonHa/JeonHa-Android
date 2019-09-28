@@ -18,7 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.song2.jeonha.Class.ClassListActivity
-import com.song2.jeonha.Hanok.HanokDatailActivity
+import com.song2.jeonha.Hanok.HanokDetailActivity
 import com.song2.jeonha.Map.data.MapData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
@@ -286,10 +286,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun setOnDetailBtnClickListener(mapDataList: ArrayList<MapData>, idx: Int) {
         img_map_act_detail_arrow.setOnClickListener {
-            startActivity<HanokDatailActivity>("idx" to mapDataList[idx].hanokIdx)
+            startActivity<HanokDetailActivity>("idx" to mapDataList[idx].hanokIdx)
         }
         txt_map_act_stay_hanok_name.setOnClickListener {
-            startActivity<HanokDatailActivity>("idx" to mapDataList[idx].hanokIdx)
+            startActivity<HanokDetailActivity>("idx" to mapDataList[idx].hanokIdx)
         }
     }
 
