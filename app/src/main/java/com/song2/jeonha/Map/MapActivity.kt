@@ -1,6 +1,7 @@
 package com.song2.jeonha.Map
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Location
 import android.support.v7.app.AppCompatActivity
@@ -15,16 +16,17 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
+import com.song2.jeonha.Class.ClassListActivity
+import com.song2.jeonha.Hanok.HanokDatailActivity
 import com.song2.jeonha.Map.data.MapData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_map.*
+import kotlinx.android.synthetic.main.toolbar_map.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -60,11 +62,24 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
-
         getPermission()
         createLocationRequest()
         addMap()
-        getHanokMapResponse()
+        setOnBtnClickListener()
+    }
+
+    private fun setOnBtnClickListener() {
+        btn_map_act_go_list.setOnClickListener {
+            startActivity<ClassListActivity>()
+        }
+
+        btn_map_act_go_list2.setOnClickListener {
+            startActivity<ClassListActivity>()
+        }
+
+        img_toolbar_map_back.setOnClickListener {
+            finish()
+        }
     }
 
     internal var locationCallback: LocationCallback = object : LocationCallback() {
@@ -81,6 +96,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
                 currentLatLng = LatLng(location!!.latitude, location!!.longitude)
 
                 focusToPosition(currentLatLng!!)
+                getHanokMapResponse()
             }
         }
     }
@@ -188,7 +204,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
         val markerOptions = MarkerOptions().let {
             it.position(defaultLocation)
-                .title("위치 정보가 수집되지 않았습니다.")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon_big))
+                .title("GPS 권한을 허용하셨다면 앱을 다시 실행해 주세요.")
         }
 
         mMap?.let {
@@ -231,21 +248,18 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun floatMarker(items: ArrayList<MapData>) {
         markerList!!.clear()
-        /*for (i in items.indices) {
+        for (i in items.indices) {
             val markerLatLng = LatLng(items[i].latitude, items[i].longitude)
             val markerOptions = MarkerOptions()
             markerOptions.position(markerLatLng)
-//                    .title(items[i].name)
-//                    .snippet(items[i].place())
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon_big))
+
             val marker: Marker = mMap!!.addMarker(markerOptions)
 
             markerList!!.add(i, marker)
-        }*/
+        }
 
-        val markerOptions = MarkerOptions().position(LatLng(37.56, 126.97))
-        val marker: Marker = mMap!!.addMarker(markerOptions)
-        markerList!!.add(0,marker)
-        setMarkerClickListener(mMap,items)
+        setMarkerClickListener(mMap, items)
     }
 
     private fun setMarkerClickListener(
@@ -262,18 +276,34 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
                 Log.v("마커 클릭 ", i.toString() + " 는 " + markerList!![i].tag)
             }
 
-            setHanokDetailView(idx,mapDataList)
+            setOnDetailBtnClickListener(mapDataList, idx)
+
+            setHanokDetailView(idx, mapDataList)
+
             return@setOnMarkerClickListener false
         }
     }
 
+    private fun setOnDetailBtnClickListener(mapDataList: ArrayList<MapData>, idx: Int) {
+        img_map_act_detail_arrow.setOnClickListener {
+            startActivity<HanokDatailActivity>("idx" to mapDataList[idx].hanokIdx)
+        }
+        txt_map_act_stay_hanok_name.setOnClickListener {
+            startActivity<HanokDatailActivity>("idx" to mapDataList[idx].hanokIdx)
+        }
+    }
+
+    @SuppressLint("RestrictedApi")
     private fun setHanokDetailView(
         idx: Int,
         mapDataList: ArrayList<MapData>
     ) {
         ll_map_act_info.visibility = View.VISIBLE
+        btn_map_act_go_list.visibility = View.VISIBLE
+        btn_map_act_go_list2.visibility= View.GONE
         txt_map_act_stay_region.text = mapDataList[idx].place
         txt_map_act_stay_hanok_name.text = mapDataList[idx].name
+        txt_map_act_stay_type.text = mapDataList[idx].type
     }
 
 }
