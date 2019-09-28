@@ -1,7 +1,10 @@
 package com.song2.jeonha.Login
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import com.song2.jeonha.Main.MainActivity
@@ -30,8 +33,60 @@ class LoginActivity : AppCompatActivity() {
 
 
         setOnClickListener()
+        setTextChangedListenerEmail()
+        setTextChangedListenerPassword()
 
 
+        et_ac_login_id.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus) v_login_id.setBackgroundColor(Color.parseColor("#f3505a"))
+            else v_login_id.setBackgroundColor(Color.parseColor("#2e394a"))
+        }
+        et_ac_login_pw.setOnFocusChangeListener { v, hasFocus ->
+
+            if(hasFocus) v_login_pw.setBackgroundColor(Color.parseColor("#f3505a"))
+            else v_login_pw.setBackgroundColor(Color.parseColor("#2e394a"))
+        }
+
+
+    }
+
+    private fun setTextChangedListenerPassword() {
+
+        et_ac_login_pw.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s!!.length != 0) {
+                    v_login_pw.setBackgroundColor(Color.parseColor("#f3505a"))
+
+                } else {
+                    v_login_id.setBackgroundColor(Color.parseColor("#2e394a"))
+                }
+            }
+        })
+
+    }
+
+    private fun setTextChangedListenerEmail() {
+        et_ac_login_id.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s!!.length != 0) {
+                    v_login_pw.setBackgroundColor(Color.parseColor("#f3505a"))
+                } else {
+                    v_login_id.setBackgroundColor(Color.parseColor("#2e394a"))
+                }
+            }
+        })
     }
 
     private fun setOnClickListener() {
@@ -58,6 +113,9 @@ class LoginActivity : AppCompatActivity() {
             val input_login_id: String = et_ac_login_id.text.toString()
             val input_login_pw: String = et_ac_login_pw.text.toString()
 
+
+            v_login_id.setBackgroundColor(Color.parseColor("#f3505a"))
+            v_login_pw.setBackgroundColor(Color.parseColor("#f3505a"))
 
 
             val postLoginResponse: Call<PostUserLoginResponse> = networkService.postUserLogin(PostUserLogin(input_login_id, input_login_pw))
