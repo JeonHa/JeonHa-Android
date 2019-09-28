@@ -231,7 +231,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun floatMarker(items: ArrayList<MapData>) {
         markerList!!.clear()
-        /*for (i in items.indices) {
+        for (i in items.indices) {
             val markerLatLng = LatLng(items[i].latitude, items[i].longitude)
             val markerOptions = MarkerOptions()
             markerOptions.position(markerLatLng)
@@ -240,12 +240,12 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
             val marker: Marker = mMap!!.addMarker(markerOptions)
 
             markerList!!.add(i, marker)
-        }*/
-
+        }
+/*
         val markerOptions = MarkerOptions().position(LatLng(37.56, 126.97))
         val marker: Marker = mMap!!.addMarker(markerOptions)
         markerList!!.add(0,marker)
-        setMarkerClickListener(mMap,items)
+        setMarkerClickListener(mMap,items)*/
     }
 
     private fun setMarkerClickListener(

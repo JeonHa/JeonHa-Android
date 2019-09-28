@@ -3,12 +3,10 @@ package com.song2.jeonha.Hanok
 import android.app.Dialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.view.LayoutInflater
 import android.widget.LinearLayout
-import android.widget.RadioGroup
+import android.widget.RadioButton
 import com.song2.jeonha.Hanok.adapter.HanokListAdapter
 import com.song2.jeonha.Hanok.data.HanokItem
 import com.song2.jeonha.Network.ApplicationController
@@ -17,10 +15,10 @@ import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_hanok_filter.*
 import kotlinx.android.synthetic.main.dialog_hanok.*
+import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
 
 class HanokFilterActivity : AppCompatActivity() {
 
@@ -28,7 +26,7 @@ class HanokFilterActivity : AppCompatActivity() {
         ApplicationController.instance.networkService
     }
 
-    var sort = 1
+    var sort: Int? = null
 
     val TAG = "HanokFIlterActivity TAG"
 
@@ -41,6 +39,13 @@ class HanokFilterActivity : AppCompatActivity() {
 
         getHanokListResponse(0)
         setOnBtnClickListener()
+    }
+
+
+    private fun setCheckedListenerOnRadioButton(radioButton: RadioButton?, i : Int,dialog: Dialog) {
+        if(radioButton!!.id == i){
+            setSort(radioButton.id,dialog)
+        }
     }
 
     private fun setOnBtnClickListener() {
@@ -59,15 +64,40 @@ class HanokFilterActivity : AppCompatActivity() {
 
     private fun setDialogClickListener(dialog: Dialog) {
 
+        dialog.rg_dialog_hanok.setOnCheckedChangeListener { radioGroup, i ->
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_maphogu,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_cityhall,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_dongdaemoon,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_gangnam,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_hongdae,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_gogung,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_yongsan,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_jamsil,i,dialog)
+            setCheckedListenerOnRadioButton(dialog.dialog_hanok_etc,i,dialog)
+        }
+
         dialog.btn_dialog_hanok_cancel.setOnClickListener {
             dialog.dismiss()
         }
 
         dialog.btn_dialog_hanok_ok.setOnClickListener {
             dialog.dismiss()
-            var sort = dialog.rg_dialog_hanok.checkedRadioButtonId
-            Log.d(TAG,sort.toString()+"클릭 됨,")
-            getHanokListResponse(1)
+
+            if (sort != null) getHanokListResponse(sort!!)
+        }
+    }
+
+    private fun setSort(id:Int,dialog: Dialog) {
+        when (id) {
+            dialog.dialog_hanok_maphogu.id -> sort = 1
+            dialog.dialog_hanok_cityhall.id -> sort = 2
+            dialog.dialog_hanok_dongdaemoon.id -> sort = 3
+            dialog.dialog_hanok_gangnam.id -> sort = 4
+            dialog.dialog_hanok_hongdae.id -> sort = 5
+            dialog.dialog_hanok_gogung.id -> sort = 6
+            dialog.dialog_hanok_yongsan.id -> sort = 7
+            dialog.dialog_hanok_jamsil.id -> sort = 8
+            dialog.dialog_hanok_etc.id -> sort = 9
         }
     }
 
