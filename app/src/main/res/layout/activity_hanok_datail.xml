@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Hanok.HanokDatailActivity">
+
+
+    <android.support.v4.widget.NestedScrollView
+            android:id="@+id/sv_ac_hanok_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="229dp"
+                    android:background="#f4f4f4"/>
+
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/back_whtie"/>
+
+
+        </RelativeLayout>
+
+
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/tv_ac_hanok_detail_"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="#2e394a"
+                            android:layout_gravity="center_vertical"
+                            android:text="한옥체험업"/>
+                    
+                    <View
+                            android:layout_width="1dp"
+                            android:layout_height="18dp"
+                            android:layout_marginHorizontal="9dp"
+                            android:background="#ced4da"/>
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="청계천 · 종로" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                        android:id="@+id/tv_ac_hanok_detail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="#2e394a"
+                        android:layout_marginTop="5dp"
+                        android:text="누리한옥게스트하우스"/>
+
+
+                <TextView
+                        android:id="@+id/tv_ac_hanok_detail_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#868e96"
+                        android:layout_marginTop="3dp"
+                        android:text="서울시 종로구 체부동 147-1"/>
+
+
+            </LinearLayout>
+
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#ced4da"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/info_icon"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#444444"
+                        android:text="상세 정보"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                    android:id="@+id/tv_ac_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="14dp"
+                    android:textColor="#495057"
+                    android:text="2016년 신축된 전통한옥으로, 한국의 전통이 살아있는 경복궁 인근 서울 종로 서촌에 위치해 있습니다. 4채의 독립된 건물인 한옥이 한대 모여있어, 개인 및 단체(가족/워크샵 등)로 오시는 분들에게도 안성맞춤입니다. 한옥체험업으로 정식 인가가되어 있고, 한국관광공사 통합품질인증 프리미어 등급의 인증을 받은 믿고 숙박 하실 수 있는 한옥입니다. 다양한 연령대의 손님들과, 여러 국적에서도 한국의 전통 가옥인 한옥에 찾아주십니다.
+"
+                    />
+
+
+        </LinearLayout>
+
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#ced4da"/>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="16dp">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/info_icon"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#444444"
+                        android:text="객실정보"/>
+
+
+            </LinearLayout>
+
+
+       <android.support.v7.widget.RecyclerView
+               android:id="@+id/rv_ac_hanok_detail_room"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="16dp"/>
+
+
+        </LinearLayout>
+
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#ced4da"/>
+
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                  >
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/info_icon"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#444444"
+                        android:text="오시는 길"/>
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#868e96"
+                    android:layout_marginTop="4dp"
+                    android:text="서울시 종로구 체부동 147-1"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#4a4a4a"
+                    android:layout_marginTop="8dp"
+                    android:text="대중교통"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#868e96"
+                    android:text="서울 지하철 3호선 &apos;경복궁역&apos; 2번출구 -&gt;
+도보 5분정도 거리
++ 인천공항 -&gt; 한옥
+6011 버스 - 경복궁역 하차 - 도보 5분거리
++ 서울역 -&gt; 한옥
+- 1호선 서울역-&gt;종로3가(3호선 환승) -&gt; 경복궁역 2번출구 - 버스 No. 1711, 7016, 7022 승차 후 경복궁역 하차
++ 김포공항 서울역 AREX -경복궁역"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+        <RelativeLayout
+                android:id="@+id/rl_ac_hanok_detail_order"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#f4f2f2"
+                android:layout_alignParentBottom="true">
+
+
+            <ImageView
+                    android:id="@+id/_ac_hanok_detail_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/red_round_fill"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:text="예약하시겠사옵니까?"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>
