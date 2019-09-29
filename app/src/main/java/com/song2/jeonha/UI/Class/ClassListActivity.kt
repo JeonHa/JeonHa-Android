@@ -16,6 +16,7 @@ import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import com.song2.jeonha.UI.Class.adapter.ClassListRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_class_list.*
+import kotlinx.android.synthetic.main.dialog_select_class.*
 import retrofit2.Call
 import retrofit2.Response
 
@@ -49,15 +50,45 @@ class ClassListActivity : AppCompatActivity() {
         val dialogQuit = dlg.findViewById<TextView>(R.id.tv_select_class_dialog_quit_btn)
         val dialogSubmit = dlg.findViewById<TextView>(R.id.tv_select_class_dialog_submit_btn)
 
-        val monContainer = dlg.findViewById<RelativeLayout>(R.id.rl_select_class_dialog_monday)
-        val monRadio = dlg.findViewById<RadioButton>(R.id.rb_select_class_dialog_monday)
 
-        monContainer.setOnClickListener {
-            if (monRadio.isChecked){
-                
-            }
+        val one = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_monday)
+        val two = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_tuesday)
+        val three = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_wednesday)
+        val four = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_thursday)
+        val five = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_friday)
+        val six = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_saturday)
+        val seven = dlg.findViewById<TextView>(R.id.rb_select_class_dialog_sunday)
+
+        one.setOnClickListener {
+            getClassListResponse(1)
         }
 
+        two.setOnClickListener {
+            getClassListResponse(2)
+        }
+
+        three.setOnClickListener {
+            getClassListResponse(3)
+
+        }
+
+        four.setOnClickListener {
+            getClassListResponse(4)
+        }
+
+        five.setOnClickListener {
+            getClassListResponse(5)
+        }
+
+
+        six.setOnClickListener {
+            getClassListResponse(6)
+        }
+
+
+        seven.setOnClickListener {
+            getClassListResponse(7)
+        }
 
         dialogQuit.setOnClickListener {
             dlg.dismiss()

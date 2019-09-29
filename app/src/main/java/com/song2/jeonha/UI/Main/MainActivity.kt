@@ -20,6 +20,7 @@ import com.song2.jeonha.UI.Main.data.MainPrograms
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import com.song2.jeonha.UI.Class.ClassListActivity
+import com.song2.jeonha.UI.Hanok.HanokFilterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 import org.jetbrains.anko.startActivity
@@ -51,10 +52,6 @@ class MainActivity : AppCompatActivity() {
             onQrcodeScanner()
         }
 
-        iv_main_act_more_btn.setOnClickListener {
-            startActivity<ClassListActivity>()
-        }
-
         getMainProgramsResponse()
         setClassProgramRecyclerView(arrayListData)
         setTitleRecyclerView()
@@ -65,15 +62,13 @@ class MainActivity : AppCompatActivity() {
                 Log.e("한옥통신", "In   " + switch_main_main_act_selector.isSelected())
                 setClassProgramRecyclerView(arrayListData)
                 iv_main_act_more_btn.setOnClickListener {
-                    startActivity<ClassListActivity>()
+                    startActivity<HanokFilterActivity>()
                 }
 
             } else {
                 //클래스통신
                 Log.e("클래스통신", "In   " + switch_main_main_act_selector.isSelected())
-
                 setClassProgramRecyclerView(arrayListClassData)
-
                 iv_main_act_more_btn.setOnClickListener {
                     startActivity<ClassListActivity>()
                 }
