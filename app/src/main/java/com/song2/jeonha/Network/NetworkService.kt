@@ -1,5 +1,9 @@
 package com.song2.jeonha.Network
 
+import com.song2.jeonha.Network.Get.GetHanokListResponse
+import com.song2.jeonha.Network.Get.GetHanokMapResponse
+import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.Get.GetUserIdCheckResponse
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
 import com.song2.jeonha.Network.Get.*
@@ -79,6 +83,10 @@ interface NetworkService {
         @Body authorization: PostUserSignUp
     ): Call<PostUserSignUpResponse>
 
+    @GET("/user/check")
+    fun getUserIdCheck(
+        @Query("id") id : String
+    ) : Call<GetUserIdCheckResponse>
 
     //메인 조회
     @GET("/main")

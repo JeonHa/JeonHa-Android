@@ -56,11 +56,10 @@
                 android:layout_marginHorizontal="53dp">
 
 
-            <LinearLayout
+            <RelativeLayout
                     android:id="@+id/ll_ac_login_name_space"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
 
                 <EditText
@@ -73,11 +72,22 @@
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
 
-            </LinearLayout>
+
+                <ImageView
+                        android:id="@+id/iv_ac_signup_name_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/check_icon"/>
+
+            </RelativeLayout>
 
 
 
             <View
+                    android:id="@+id/v_sign_up_name_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"
@@ -124,11 +134,22 @@
                         android:text="중복확인"/>
 
 
+                <ImageView
+                        android:id="@+id/iv_ac_signup_id_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/check_icon"/>
+
+
             </RelativeLayout>
 
 
 
             <View
+                    android:id="@+id/v_sign_up_id_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"
@@ -148,11 +169,10 @@
                 android:layout_marginHorizontal="53dp">
 
 
-            <LinearLayout
+            <RelativeLayout
                     android:id="@+id/ll_ac_login_pw_space"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
 
                 <EditText
@@ -166,11 +186,21 @@
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
 
-            </LinearLayout>
+                <ImageView
+                        android:id="@+id/iv_ac_signup_pw_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/check_icon"/>
+
+            </RelativeLayout>
 
 
 
             <View
+                    android:id="@+id/v_sign_up_pw_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"
@@ -188,7 +218,7 @@
                 android:layout_marginHorizontal="53dp">
 
 
-            <LinearLayout
+            <RelativeLayout
                     android:id="@+id/ll_ac_login_pw_check_space"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -206,11 +236,21 @@
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
 
-            </LinearLayout>
+                <ImageView
+                        android:id="@+id/iv_ac_signup_pwcheck_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/check_icon"/>
+
+            </RelativeLayout>
 
 
 
             <View
+                    android:id="@+id/v_sign_up_pwcheck_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"
@@ -228,7 +268,7 @@
                 android:layout_marginHorizontal="53dp">
 
 
-            <LinearLayout
+            <RelativeLayout
                     android:id="@+id/ll_ac_login_phone_space"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -240,16 +280,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="핸드폰 번호"
+                        android:maxLength="13"
+                        android:inputType="phone"
                         android:background="@null"
                         android:layout_marginLeft="8dp"
                         android:layout_gravity="center_vertical"
                         android:textColorHint="#CECECE"/>
 
-            </LinearLayout>
+
+                <ImageView
+                        android:id="@+id/iv_ac_signup_phone_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/check_icon"/>
+
+            </RelativeLayout>
 
 
 
             <View
+
+                    android:id="@+id/v_sign_up_phone_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#474747"

@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         setOnClickListener()
-        setTextChangedListenerEmail()
+        setTextChangedListenerID()
         setTextChangedListenerPassword()
 
 
@@ -63,14 +63,14 @@ class LoginActivity : AppCompatActivity() {
                     v_login_pw.setBackgroundColor(Color.parseColor("#f3505a"))
 
                 } else {
-                    v_login_id.setBackgroundColor(Color.parseColor("#2e394a"))
+                    v_login_pw.setBackgroundColor(Color.parseColor("#2e394a"))
                 }
             }
         })
 
     }
 
-    private fun setTextChangedListenerEmail() {
+    private fun setTextChangedListenerID() {
         et_ac_login_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
@@ -80,7 +80,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s!!.length != 0) {
-                    v_login_pw.setBackgroundColor(Color.parseColor("#f3505a"))
+                    v_login_id.setBackgroundColor(Color.parseColor("#f3505a"))
                 } else {
                     v_login_id.setBackgroundColor(Color.parseColor("#2e394a"))
                 }
@@ -122,23 +122,28 @@ class LoginActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<PostUserLoginResponse>, t: Throwable) {
                     Log.e("Sign In Fail", t.toString())
 
+
                 }
 
                 //통신 성공 시 수행되는 메소드
                 override fun onResponse(call: Call<PostUserLoginResponse>, response: Response<PostUserLoginResponse>) {
-                    if (response.isSuccessful) {
 
+                    if(response.isSuccessful){
+                        if (response.body()!!.status==200) {
+                            startActivity<MainActivity>()
+                            Log.e("login success","로그인 성공"+response.body()+"/"+response.code())
 
-                        response.body()!!.status
-                        startActivity<MainActivity>()
+                            finish()
+                        } else if(response.body()!!.status ==400){
+                            Log.e("login success","로그인 에러1"+response.body()+"/"+response.code())
 
-
-                    } else {
-                        var resMessage: String = response.message()
-                        var test = response.code()
-                        Log.e("login error",test.toString()+"로그인 에러"+resMessage)
-
-                    }
+                            toast("아이디/비밀번호가 일치하지 않습니다")
+                        }else{
+                            Log.e("login success","로그인 에러2"+response.body()+"/"+response.code())
+                            toast("로그인 에러")
+                        }
+                    }else
+                        toast("test")
                 }
             })
         }
