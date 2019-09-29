@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList
+package com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList
 
 data class ClassListItemData(
     val classIdx: Int,

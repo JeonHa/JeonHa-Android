@@ -104,6 +104,7 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s!!.length != 0) {
                     v_sign_up_name_line.setBackgroundColor(Color.parseColor("#f3505a"))
+                    iv_ac_signup_name_check.setVisibility(View.VISIBLE)
                     cnt++
                 }
                 else {
@@ -139,7 +140,12 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s!! == et_ac_sign_up_pw.text.toString()) {
+                if (s!!.length != 0) {
+                    v_sign_up_pw_line.setBackgroundColor(Color.parseColor("#f3505a"))
+                    et_ac_sign_up_pw.text.toString() == et_ac_sign_up_pw_check.text.toString()
+                    iv_ac_signup_pw_check.setVisibility(View.VISIBLE)
+
+
                     cnt++
                 }
             }
