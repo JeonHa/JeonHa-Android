@@ -1,6 +1,6 @@
 package com.song2.jeonha.Network.Get
 
-import com.song2.jeonha.Hanok.data.HanokItem
+import com.song2.jeonha.UI.Hanok.data.HanokItem
 
 class GetHanokListResponse(
     val success : Boolean,

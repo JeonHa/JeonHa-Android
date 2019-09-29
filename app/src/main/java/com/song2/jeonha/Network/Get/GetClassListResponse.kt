@@ -4,7 +4,7 @@ import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassListIte
 
 class GetClassListResponse(
     val success: Boolean,
-    val status: Long,
+    val status: Int,
     val resMessage: String,
     val data: ArrayList<ClassListItemData>
 )

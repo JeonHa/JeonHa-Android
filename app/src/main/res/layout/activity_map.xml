@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar_map"
-            tools:context=".Map.MapActivity" />
+            tools:context=".UI.Map.MapActivity" />
 
     <android.support.design.widget.FloatingActionButton
             android:id="@+id/btn_map_act_go_list"
