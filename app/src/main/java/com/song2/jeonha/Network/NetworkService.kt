@@ -1,17 +1,16 @@
 package com.song2.jeonha.Network
 
-import com.google.gson.JsonObject
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.Get.GetUserIdCheckResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
+import com.song2.jeonha.Network.Get.*
 import com.song2.jeonha.Network.Post.PostUserLogin
 import com.song2.jeonha.Network.Post.PostUserSignUp
 import com.song2.jeonha.Network.Post.Response.PostUserLoginResponse
 import com.song2.jeonha.Network.Post.Response.PostUserSignUpResponse
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -39,6 +38,18 @@ interface NetworkService {
         @Header("Content-Type") content_type: String,
         @Query("sort") sort: Int
     ): Call<GetHanokListResponse>
+
+    /**
+     * 소희
+     * 한옥디테일
+     */
+    @GET("/hanok/{hanokIdx}")
+    fun getHanokDetailResponse(
+        @Header("Content-Type") content_type: String,
+        @Path("hanokIdx") hanokIdx: Int
+    ): Call<GetHanokDetailResponse>
+
+
 
     //스탬프 조회
     @GET("/user/stamp")
@@ -72,5 +83,26 @@ interface NetworkService {
         @Body authorization: PostUserSignUp
     ): Call<PostUserSignUpResponse>
 
+    @GET("/user/check")
+    fun getUserIdCheck(
+        @Query("id") id : String
+    ) : Call<GetUserIdCheckResponse>
+
+    //메인 조회
+    @GET("/main")
+    fun getMainResponse(
+        @Header("authorization") token: String
+    ): Call<GetMainResponse>
+
+    @GET("/class")
+    fun getClassListResponse(
+        @Query ("day") day : Int
+    ): Call<GetClassListResponse>
+
+    //클래스 디테일
+    @GET("/class/{classIdx}")
+    fun getClassDetailResponse(
+        @Path("classIdx") classIdx: Int
+    ): Call<GetClassDetailResponse>
 }
 
