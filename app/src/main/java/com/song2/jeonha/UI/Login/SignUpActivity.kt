@@ -45,29 +45,23 @@ class SignUpActivity : AppCompatActivity() {
         //값들이 채워졌을 때
         setTextChangedListener()
 
-        //될까?
-        if(cnt == 5)
-        {
-            //버튼 활성화 & 통신
-            btn_ac_signup_ok.setBackgroundColor(Color.parseColor("#f3505a"))
-
-
-        }
 
     }
 
     private fun setOnClickListener() {
         btn_ac_signup_ok.setOnClickListener {
 
-          PostUserSignUpResponse()
-      }
+            GetUserIdCheck()
 
 
-      btn_ac_signup_checkid.setOnClickListener {
+        }
 
-          GetUserIdCheck()
 
-      }
+        btn_ac_signup_checkid.setOnClickListener {
+
+            GetUserIdCheck()
+
+        }
 
     }
 
@@ -197,11 +191,12 @@ class SignUpActivity : AppCompatActivity() {
                             btn_ac_signup_checkid.setVisibility(View.GONE)
                             iv_ac_signup_id_check.setVisibility(View.VISIBLE)
                             cnt++
+                            PostUserSignUpResponse()
 
 
-                    }
+                        }
                         else {
-                                toast(response.body()!!.message)
+                            toast(response.body()!!.message)
 
                         }
 
@@ -227,7 +222,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
         if (et_ac_sign_up_id.text.toString().isNotEmpty() && et_ac_sign_up_pw.text.toString().isNotEmpty()
-            && et_ac_sign_up_pw_check.text.toString().isNotEmpty() && et_ac_sign_up_name.text.isNotEmpty() && et_ac_sign_up_phone.text.isNotEmpty()
+            && et_ac_sign_up_name.text.isNotEmpty() && et_ac_sign_up_phone.text.isNotEmpty()
         ) {
 
             val input_id: String = et_ac_sign_up_id.text.toString()
@@ -237,11 +232,9 @@ class SignUpActivity : AppCompatActivity() {
 
 
 
-
-
             //통신 시작
             val postSignUpResponse: Call<PostUserSignUpResponse> =
-                networkService.postUserSignUp(PostUserSignUp(input_id, input_pw,input_name,input_phone))
+                networkService.postUserSignUp(PostUserSignUp(input_id, input_pw, input_name, input_phone))
             postSignUpResponse.enqueue(object : Callback<PostUserSignUpResponse> {
                 override fun onFailure(call: Call<PostUserSignUpResponse>, t: Throwable) {
                     Log.e("Sign Up Fail", t.toString())
@@ -251,32 +244,35 @@ class SignUpActivity : AppCompatActivity() {
 
                 // 세모입 다예 화이팅 !! ❤️
 
+
+
                 //통신 성공 시 수행되는 메소드
                 override fun onResponse(
                     call: Call<PostUserSignUpResponse>,
                     response: Response<PostUserSignUpResponse>
                 ) {
-                    if (response.body()!!.status==200) {
+                    if (response.isSuccessful) {
 
+
+
+
+                        var resMessage: String = response.body()!!.resMessage
+                        Log.v("signup Successful","회원가입 성공"+resMessage)
                         startActivity<MainActivity>()
                         finish()
 
 
                     } else {
-
-                        var message: String = response.body()!!.resMessage
+                        var message: String = response.body()!!.message
                         Log.e("signup error","회원가입 에러"+message)
-
-
                     }
                 }
             })
         }
         else{
-            toast("빈칸을 다 채워주세요 :)")
+            toast("빈칸을 다 채워주세요")
         }
 
     }
-
 
 }
