@@ -6,6 +6,7 @@ data class PostUserSignUpResponse(
     val success : Boolean,
     val status : Int,
     val message : String,
+    val resMessage : String,
     val data: Authorization
 
 )
