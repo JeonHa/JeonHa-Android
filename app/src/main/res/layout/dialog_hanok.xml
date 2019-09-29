@@ -27,7 +27,6 @@
                     android:id="@+id/rg_dialog_hanok"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checkedButton="@id/dialog_hanok_maphogu"
                     android:orientation="vertical">
 
                 <RadioButton
