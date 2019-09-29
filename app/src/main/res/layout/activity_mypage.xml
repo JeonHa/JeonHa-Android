@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Main.Mypage.MypageActivity">
+        tools:context=".UI.Main.Mypage.MypageActivity">
 <RelativeLayout
         android:paddingBottom="20dp"
         android:elevation="10dp"
