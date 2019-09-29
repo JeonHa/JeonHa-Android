@@ -39,9 +39,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var titleListRecyclerViewAdapter: TitleListRecyclerViewAdapter
     var titleListData: ArrayList<TitleData> = ArrayList()
 
-    //lateinit var mainProgram: MainPrograms ;
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -181,8 +178,7 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             Log.e("mainPrograms success", ":::test")
                         }
-                    }else
-                        Log.e("mainPrograms test", ":::test")
+                    }
                 }else
                     Log.e("mainPrograms fail", ":::test")
 
