@@ -10,15 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
 import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
-import com.song2.jeonha.Main.ProgramData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.NetworkService
 
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.fragment_class.*
 import org.jetbrains.anko.support.v4.ctx
-import org.jetbrains.anko.support.v4.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

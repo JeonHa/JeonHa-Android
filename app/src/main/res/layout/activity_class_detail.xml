@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Hanok.HanokDetailActivity">
+
+
+    <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nested_sv_class_detail_act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <android.support.v4.view.ViewPager
+                        android:layout_width="match_parent"
+                        android:layout_height="229dp"
+                        android:background="#f4f4f4"/>
+                <ImageView
+                        android:id="@+id/iv_class_detail_back_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:src="@drawable/back_whtie"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="9dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_class_detail_act_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
+                        android:includeFontPadding="false"
+                        android:text="월요일·수요일·금요일"
+                        android:textColor="@color/dark"
+                        android:textSize="12sp"
+                />
+
+
+                <TextView
+                        android:id="@+id/tv_class_detail_act_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/noto_sans_cjkkr_medium"
+                        android:includeFontPadding="false"
+                        android:text="다도하면서 힐링하기"
+                        android:textColor="#2e394a"
+                        android:textSize="20sp"/>
+
+
+                <TextView
+                        android:id="@+id/tv_class_detail_act_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
+                        android:includeFontPadding="false"
+                        android:text="서울시 종로구 체부동 147-1"
+                        android:textColor="#868e96"
+                        android:textSize="14sp"/>
+
+
+            </LinearLayout>
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ced4da"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/info_icon"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_cjkkr_bold"
+                            android:includeFontPadding="false"
+                            android:text="이용 시간"
+                            android:textColor="#444444"
+                            android:textSize="14sp"/>
+
+
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_class_detail_act_time"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ced4da"/>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/info_icon"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_cjkkr_bold"
+                            android:includeFontPadding="false"
+                            android:text="상세 정보"
+                            android:textColor="#444444"
+                            android:textSize="14sp"/>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                        android:id="@+id/tv_class_detail_act_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
+                        android:includeFontPadding="false"
+                        android:text="2016년 신축된 전통한옥으로, 한국의 전통이 살아있는 경복궁 인근 서울 종로 서촌에 위치해 있습니다. 4채의 독립된 건물인 한옥이 한대 모여있어, 개인 및 단체(가족/워크샵 등)로 오시는 분들에게도 안성맞춤입니다. 한옥체험업으로 정식 인가가되어 있고, 한국관광공사 통합품질인증 프리미어 등급의 인증을 받은 믿고 숙박 하실 수 있는 한옥입니다. 다양한 연령대의 손님들과, 여러 국적에서도 한국의 전통 가옥인 한옥에 찾아주십니다.
+"
+                        android:textColor="#495057"
+                        android:textSize="16sp"/>
+
+
+            </LinearLayout>
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ced4da"/>
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ced4da"/>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <RelativeLayout
+            android:id="@+id/rl_ac_hanok_detail_order"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f4f2f2">
+
+
+        <ImageView
+                android:id="@+id/_ac_hanok_detail_order"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:src="@drawable/red_round_fill"/>
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/noto_sans_cjkkr_bold"
+                android:includeFontPadding="false"
+                android:gravity="center_horizontal"
+                android:text="예약하시겠사옵니까?"
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -10,9 +10,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
-import com.song2.jeonha.Main.ProgramData
 import com.song2.jeonha.R
-import de.hdodenhof.circleimageview.CircleImageView
 
 class ClassBookingRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassData?>) : RecyclerView.Adapter<ClassBookingRecyclerViewAdapter.Holder>() {
 

@@ -1,7 +1,6 @@
 package com.song2.jeonha.Main
 
 import android.app.Activity
-import android.content.AbstractThreadedSyncAdapter
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -10,18 +9,18 @@ import android.util.Log
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
 import com.song2.jeonha.Class.ClassListActivity
-import com.google.zxing.integration.android.IntentResult
 import com.song2.jeonha.Main.Mypage.MypageActivity
 import com.song2.jeonha.Main.QRcode.QRcodeActivity
+import com.song2.jeonha.Main.adapter.ProgramListRecyclerViewAdapter
+import com.song2.jeonha.Main.adapter.TitleListRecyclerViewAdapter
+import com.song2.jeonha.Main.data.ProgramData
+import com.song2.jeonha.Main.data.TitleData
 import com.song2.jeonha.Network.ApplicationController
-import com.song2.jeonha.Network.Get.ClassPrograms
 import com.song2.jeonha.Network.Get.GetMainResponse
-import com.song2.jeonha.Network.Get.HanokPrograms
-import com.song2.jeonha.Network.Get.MainPrograms
+import com.song2.jeonha.Main.data.MainPrograms
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.ctx
 
 import org.jetbrains.anko.startActivity
 import retrofit2.Call
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         switch_main_main_act_selector.setOnCheckedChangeListener { button, checked ->
             if (!checked) {
                 //한옥통신
-                Log.e("한옥통신", "In   " + switch_main_main_act_selector.isChecked)
+                Log.e("한옥통신", "In   " + switch_main_main_act_selector.isSelected())
                 setClassProgramRecyclerView(arrayListData)
                 iv_main_act_more_btn.setOnClickListener {
                     startActivity<ClassListActivity>()
@@ -87,6 +86,9 @@ class MainActivity : AppCompatActivity() {
 
     fun setClassProgramRecyclerView(arrayListData: ArrayList<ProgramData>) {
 
+        Log.e("리사이클러뷰 Data", ":::confirm"+arrayListData.size)
+
+
         programListRecyclerViewAdapter = ProgramListRecyclerViewAdapter(this, arrayListData)
         programListRecyclerViewAdapter.notifyDataSetChanged()
         rv_main_act_class_list.adapter = programListRecyclerViewAdapter
@@ -95,11 +97,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setTitleRecyclerView() {
-        titleListData.add(TitleData(1, "https://file2.nocutnews.co.kr/newsroom/image/2011/09/07170436417004_61000040.jpg", "떡메치기"))
-        titleListData.add(TitleData(1, "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75", "전통 차 다리"))
-        titleListData.add(TitleData(1, "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg", "전통한복 체험"))
-        titleListData.add(TitleData(1, "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75", "부채춤"))
-        titleListData.add(TitleData(1, "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75", "부채춤"))
+        titleListData.add(
+            TitleData(
+                1,
+                "https://file2.nocutnews.co.kr/newsroom/image/2011/09/07170436417004_61000040.jpg",
+                "떡메치기"
+            )
+        )
+        titleListData.add(
+            TitleData(
+                1,
+                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
+                "전통 차 다리"
+            )
+        )
+        titleListData.add(
+            TitleData(
+                1,
+                "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg",
+                "전통한복 체험"
+            )
+        )
+        titleListData.add(
+            TitleData(
+                1,
+                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
+                "부채춤"
+            )
+        )
+        titleListData.add(
+            TitleData(
+                1,
+                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
+                "부채춤"
+            )
+        )
 
         arrayListData.clear()
         titleListRecyclerViewAdapter = TitleListRecyclerViewAdapter(this, titleListData)
@@ -149,8 +181,11 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             Log.e("mainPrograms success", ":::test")
                         }
-                    }
-                }
+                    }else
+                        Log.e("mainPrograms test", ":::test")
+                }else
+                    Log.e("mainPrograms fail", ":::test")
+
             }
         })
     }
@@ -159,16 +194,23 @@ class MainActivity : AppCompatActivity() {
 
         for (i in mainPrograms.hanokList.indices) {
             val programData = ProgramData(
-                mainPrograms.hanokList.get(i).hanokIdx, mainPrograms.hanokList.get(i).thumnail, mainPrograms.hanokList.get(i).name
-            );
+                mainPrograms.hanokList.get(i).hanokIdx,
+                mainPrograms.hanokList.get(i).thumnail,
+                mainPrograms.hanokList.get(i).name
+            )
             arrayListData.add(programData)
+            Log.e("hanokList Data", ":::confirm")
+
         }
 
         for (i in mainPrograms.classList.indices) {
             val programData = ProgramData(
-                mainPrograms.classList.get(i).classIdx, mainPrograms.classList.get(i).thumnail, mainPrograms.classList.get(i).name
-            );
+                mainPrograms.classList.get(i).classIdx,
+                mainPrograms.classList.get(i).thumnail,
+                mainPrograms.classList.get(i).name
+            )
             arrayListClassData.add(programData)
+            Log.e("classList Data", ":::confirm")
         }
     }
 

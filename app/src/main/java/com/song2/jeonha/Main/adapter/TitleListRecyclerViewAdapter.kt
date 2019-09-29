@@ -1,9 +1,7 @@
-package com.song2.jeonha.Main
+package com.song2.jeonha.Main.adapter
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.Color
-import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -13,17 +11,10 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
-import com.bumptech.glide.load.engine.prefill.BitmapPreFiller
-import com.bumptech.glide.load.resource.bitmap.BitmapDrawableDecoder
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.song2.jeonha.Main.data.TitleData
 import com.song2.jeonha.R
-import de.hdodenhof.circleimageview.CircleImageView
-import jp.wasabeef.glide.transformations.BlurTransformation
-import jp.wasabeef.glide.transformations.ColorFilterTransformation
 
 
 class TitleListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<TitleData>) :

@@ -1,4 +1,4 @@
-package com.song2.jeonha.Network.Get
+package com.song2.jeonha.Main.data
 
 class ClassPrograms(
     val classIdx: Int,

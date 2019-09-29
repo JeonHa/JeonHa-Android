@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main
+package com.song2.jeonha.Main.data
 
 data class TitleData(
     var id : Int,

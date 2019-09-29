@@ -1,4 +1,4 @@
-package com.song2.jeonha.Class
+package com.song2.jeonha.Class.adapter
 
 import android.content.Context
 import android.graphics.Color
@@ -11,13 +11,13 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.song2.jeonha.Class.ClassDetailActivity
+import com.song2.jeonha.Class.data.ClassData
 import com.song2.jeonha.R
-import de.hdodenhof.circleimageview.CircleImageView
+import org.jetbrains.anko.startActivity
 
 
 class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassData>) : RecyclerView.Adapter<ClassListRecyclerViewAdapter.Holder>() {
-
-    var CLASSIDX = "classIDX"
 
     override fun onCreateViewHolder(viewgroup: ViewGroup, position: Int): Holder {
 
@@ -35,8 +35,7 @@ class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Cla
         holder.classTitle.text = dataList[position].class_title
         //holder.classDay.text
         holder.container.setOnClickListener {
-            //detailed 페이지로
-            //ctx.startActivity<>()
+            ctx.startActivity<ClassDetailActivity>("idx" to dataList[position].id)
         }
 
         var test = ""
@@ -53,7 +52,7 @@ class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Cla
             .load(dataList[position].class_img)
             .into(holder.classImg)
 
-        holder.classImg.setColorFilter(Color.parseColor("#BDBDBD"), PorterDuff.Mode.MULTIPLY);
+        holder.classImg.setColorFilter(Color.parseColor("#BDBDBD"), PorterDuff.Mode.MULTIPLY)
 
     }
 
