@@ -24,4 +24,15 @@
             android:text="Title"
             android:textColor="#ffffff"
             android:textSize="20sp"/>
-</RelativeLayout>
+
+    <TextView
+            android:id="@+id/tv_item_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
+            android:text="Title"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/></RelativeLayout>

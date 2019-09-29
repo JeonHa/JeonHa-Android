@@ -107,39 +107,54 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setTitleRecyclerView() {
+
         titleListData.add(
             TitleData(
-                1,
-                "https://file2.nocutnews.co.kr/newsroom/image/2011/09/07170436417004_61000040.jpg",
-                "떡메치기"
-            )
-        )
-        titleListData.add(
-            TitleData(
-                1,
                 "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
-                "전통 차 다리"
+                "북촌 한옥 마을에서 만나는 맛집 10선",
+                "구경도 하고, 배도 채우고 !\n" +
+                        "입 안 가득 채워지는 우리의 맛\n",
+                "http://naver.me/5l8Meuhk"
             )
         )
         titleListData.add(
             TitleData(
-                1,
                 "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg",
-                "전통한복 체험"
+                "사랑하는 사람과 함께하는 삼청동 데이트 코스",
+                "북촌 8경, 감성 가득한 포토 스팟에서\n" +
+                        "한옥의 빛깔로 그려진 추억 사진 남기기",
+                "http://naver.me/xJvi2C9H"
+
+
             )
         )
         titleListData.add(
             TitleData(
-                1,
-                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
-                "부채춤"
+                "https://post-phinf.pstatic.net/MjAxNzAyMDhfMTUg/MDAxNDg2NTM1MzQ4Njcz.Gw2i1l4CHcQsb3tZlGoctLI8iofD92zlDp4_VldIEacg.VoLRH7NXhRsrHsYMYr_LO2M4tUlrrWmtNBEyaBvkNk8g.JPEG/007.jpg?type=w1200",
+                "북촌 한옥 마을의 숨겨진 비밀",
+                "‘건축왕’이라 불리는 그가 만들어낸\n" +
+                        "경성, 북촌 한옥 마을의 뜨거운 역사 이야기\n" +
+                        "- 건축왕, 경성을 만들다",
+
+                "http://naver.me/5az4AAdB"
             )
         )
         titleListData.add(
             TitleData(
-                1,
                 "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
-                "부채춤"
+                "다양한 브랜드가 공존하는, 북촌",
+                "골목 곳곳에서 눈길을 사로잡는,\n" +
+                        "빈티지하고 유니크한 패션샵을 소개합니다.",
+                "http://naver.me/F1jurbnS"
+            )
+        )
+        titleListData.add(
+            TitleData(
+                "https://post-phinf.pstatic.net/MjAxODA4MTNfMTU3/MDAxNTM0MTUyMDY3NzA1.NTuGE6MSj6GfMI5SmGlqH0n9OQWE_RXP_v3TZi93ovIg.aV01K90j0xnor7bnrDBJQwt0Ij_Q3eIDZNWHPs21Dd0g.JPEG/%ED%83%88%EB%B0%A9.JPG?type=w1200",
+                "오래된 한국의 공방, 오래가게 8선",
+                "익숙해서 눈치채지 못했던,\n" +
+                        "한국의 전통 공예의 아름다움이 가득한 공방 8곳",
+                "http://naver.me/xzVISbSK"
             )
         )
 

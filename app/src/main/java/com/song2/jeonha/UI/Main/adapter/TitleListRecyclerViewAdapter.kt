@@ -15,6 +15,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.song2.jeonha.UI.Main.data.TitleData
 import com.song2.jeonha.R
+import org.jetbrains.anko.startActivity
 
 
 class TitleListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<TitleData>) :
@@ -34,8 +35,10 @@ class TitleListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Tit
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
         holder.titleName.text = dataList[position].title_name
+        holder.titleContents.text = dataList[position].sub_contents
+
         holder.container.setOnClickListener {
-            //detailed 페이지로
+            ctx.startActivity<WebViewActivity>("uriAddress" to dataList[position].uri_address)
         }
 
         var requestOptions = RequestOptions()
@@ -48,14 +51,13 @@ class TitleListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Tit
 
         holder.titleImg.setColorFilter(Color.parseColor("#BDBDBD"), PorterDuff.Mode.MULTIPLY);
 
-
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var titleImg = itemView.findViewById(R.id.iv_item_main_title_image) as ImageView
         var titleName = itemView.findViewById(R.id.tv_item_main_title) as TextView
+        var titleContents = itemView.findViewById(R.id.tv_item_sub_title) as TextView
         var container = itemView.findViewById(R.id.rv_item_main_title_container) as RelativeLayout
-
     }
 
 }
