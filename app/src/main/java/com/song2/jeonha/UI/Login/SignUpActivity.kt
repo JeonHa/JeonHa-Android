@@ -45,14 +45,14 @@ class SignUpActivity : AppCompatActivity() {
         //값들이 채워졌을 때
         setTextChangedListener()
 
-        //될까?
-        if(cnt == 5)
-        {
-            //버튼 활성화 & 통신
-            btn_ac_signup_ok.setBackgroundColor(Color.parseColor("#f3505a"))
-
-
-        }
+//        //될까?
+//        if(cnt == 5)
+//        {
+//            //버튼 활성화 & 통신
+//            btn_ac_signup_ok.setBackgroundColor(Color.parseColor("#f3505a"))
+//
+//
+//        }
 
     }
 
@@ -264,7 +264,7 @@ class SignUpActivity : AppCompatActivity() {
 
                     } else {
 
-                        var message: String = response.body()!!.resMessage
+                        var message: String = response.body()!!.message
                         Log.e("signup error","회원가입 에러"+message)
 
 

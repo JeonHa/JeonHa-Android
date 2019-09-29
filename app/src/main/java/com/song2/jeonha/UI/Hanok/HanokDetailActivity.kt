@@ -1,5 +1,6 @@
 package com.song2.jeonha.UI.Hanok
 
+import android.app.Dialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -19,6 +20,8 @@ import com.song2.jeonha.Network.Get.GetHanokDetailResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_hanok_detail.*
+import kotlinx.android.synthetic.main.dialog_hanok.*
+import kotlinx.android.synthetic.main.dialog_orderok.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,6 +45,43 @@ class HanokDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         hanokIdx = intent.getIntExtra("idx", -1)
 
         getMap()
+
+
+        setTextChangedListener()
+    }
+
+    private fun setTextChangedListener() {
+
+        btn_ac_hanok_detail_order.setOnClickListener {
+
+
+            showDialog()
+
+        }
+    }
+
+
+
+    private fun showDialog() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_orderok)
+        dialog.show()
+
+        setDialogClickListener(dialog)
+    }
+
+
+
+    private fun setDialogClickListener(dialog: Dialog) {
+
+
+
+        dialog.btn_dialog_order_ok.setOnClickListener {
+
+
+            dialog.dismiss()
+
+        }
     }
 
     private fun setRecyclerView(items: HanokDetailItem) {

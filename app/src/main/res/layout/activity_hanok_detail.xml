@@ -355,7 +355,7 @@
 
 
         <ImageView
-                android:id="@+id/_ac_hanok_detail_order"
+                android:id="@+id/btn_ac_hanok_detail_order"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="16dp"
