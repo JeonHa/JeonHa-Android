@@ -6,6 +6,7 @@ import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHa
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.Post.PostQrcodeScanResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -52,4 +53,10 @@ interface NetworkService {
     fun getHanokBookingListResponse(
         @Header("authorization") token: String
     ): Call<GetBookingHanokListResponse>
+    //qr코드
+    @POST("/qr")
+    fun postQrcodeScanResponse(
+        @Header("authorization") token: String,
+        @Body() body: JsonObject
+    ): Call<PostQrcodeScanResponse>
 }

@@ -20,7 +20,7 @@
                    android:src="@drawable/jeonha_main_icon"/>
 
         <ImageView 
-                           android:id="@+id/iv_main_mypage"
+                   android:id="@+id/iv_main_mypage"
                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                    android:layout_alignParentRight="true"
                    android:layout_margin="4dp"

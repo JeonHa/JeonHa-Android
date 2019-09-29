@@ -7,19 +7,35 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import com.google.zxing.integration.android.IntentIntegrator
 import com.song2.jeonha.Class.ClassListActivity
 import com.google.zxing.integration.android.IntentResult
 import com.song2.jeonha.Main.Mypage.MypageActivity
 import com.song2.jeonha.Main.QRcode.QRcodeActivity
+import com.song2.jeonha.Network.ApplicationController
+import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.NetworkService
+import com.song2.jeonha.Network.Post.PostQrcodeScanResponse
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_mypage.*
 
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-
+    val networkService : NetworkService by lazy {
+        ApplicationController.instance.networkService
+    }
     lateinit var programListRecyclerViewAdapter: ProgramListRecyclerViewAdapter
     var arrayListData : ArrayList<ProgramData> = ArrayList()
 
@@ -140,10 +156,35 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             val scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
             val re = scanResult.contents
-            Toast.makeText(this, "$re", Toast.LENGTH_LONG).show()
+            QRcodePost(re)
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+
+    private fun QRcodePost(url : String) {
+        val jsonObject = JSONObject()
+        jsonObject.put("url", url)
+        val gsonObject: JsonObject = JsonParser().parse(jsonObject.toString()) as JsonObject
+        val postQrcodeScanResponse = networkService.postQrcodeScanResponse("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjMsImlhdCI6MTU2OTUwMDMxMCwiZXhwIjoxNTcwMTA1MTEwLCJpc3MiOiJqZW9uaGEyMDE5In0.BEilMzrtMn4JPvotwmFqEmMEM5GNzqAPqk5I_Sqise4",gsonObject)
+        postQrcodeScanResponse.enqueue(object : Callback<PostQrcodeScanResponse> {
+            override fun onFailure(call: Call<PostQrcodeScanResponse>, t: Throwable) {
+                Log.e("PostQrcodeScanResponse Fail",t.toString())
+            }
+
+            override fun onResponse(
+                call: Call<PostQrcodeScanResponse>, response: Response<PostQrcodeScanResponse>
+            ) {
+                if(response.isSuccessful){
+                    if(response.body()!!.status == 200){
+                  toast(response.body()!!.message.toString())
+                    }else{
+                        toast(response.body()!!.message.toString())
+                    }
+                }
+            }
+        })
     }
 
 }

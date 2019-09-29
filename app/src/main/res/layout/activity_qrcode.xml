@@ -34,9 +34,10 @@
        android:layout_centerHorizontal="true" />
 
     <TextView
+            android:id="@+id/tv_qr_text"
             android:layout_marginBottom="126dp"
             android:layout_below="@+id/db_qr"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="44dp"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +46,7 @@
             android:fontFamily="@font/noto_sans_cjkkr_medium"
             android:includeFontPadding="false"
             android:gravity="center_horizontal"
-            android:text="해당 전통강좌\n한옥스테이 장소의
-QR코드를 스캔해주세요!"
+            android:text="QR코드를 스캔해주세요!"
             />
+
 </RelativeLayout>
