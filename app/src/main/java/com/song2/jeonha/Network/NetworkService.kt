@@ -1,19 +1,12 @@
 package com.song2.jeonha.Network
 
-import com.google.gson.JsonObject
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
-import com.song2.jeonha.Network.Get.GetHanokDetailResponse
-import com.song2.jeonha.Network.Get.GetHanokListResponse
-import com.song2.jeonha.Network.Get.GetHanokMapResponse
-import com.song2.jeonha.Network.Get.GetMainResponse
-import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
+import com.song2.jeonha.Network.Get.*
 import com.song2.jeonha.Network.Post.PostUserLogin
 import com.song2.jeonha.Network.Post.PostUserSignUp
 import com.song2.jeonha.Network.Post.Response.PostUserLoginResponse
 import com.song2.jeonha.Network.Post.Response.PostUserSignUpResponse
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -87,19 +80,17 @@ interface NetworkService {
     ): Call<PostUserSignUpResponse>
 
 
-    //GET
+    //메인 조회
     @GET("/main")
     fun getMainResponse(
         @Header("authorization") token: String
     ): Call<GetMainResponse>
-/*
 
-    @GET("/class")
-    fun getaClassListResponse(
-        @Header("authorization") token: String,
-        @Query ("day") sort : Int
-    ): Call<GetClassListResponse>
-*/
+    //클래스 디테일
+    @GET("/class/{classIdx}")
+    fun getClassDetailResponse(
+        @Path("classIdx") classIdx: Int
+    ): Call<GetClassDetailResponse>
 
 }
 

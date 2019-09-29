@@ -1,6 +1,6 @@
 package com.song2.jeonha.Network.Get
 
-import com.song2.jeonha.Map.data.MapData
+import com.song2.jeonha.UI.Main.data.MainPrograms
 
 class GetMainResponse(
     val success: Boolean,
