@@ -11,5 +11,6 @@ data class HanokDetailItem(
     val detail: String,
     val option: String,
     val transport: String,
-    val img: ArrayList<PhotoItem>
+    val img: ArrayList<PhotoItem>,
+    val rooms : ArrayList<Rooms>
 )

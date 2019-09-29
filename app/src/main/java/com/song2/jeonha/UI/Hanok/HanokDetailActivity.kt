@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.View
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -41,16 +42,11 @@ class HanokDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         hanokIdx = intent.getIntExtra("idx", -1)
 
         getMap()
-        setRecyclerView()
     }
 
-    private fun setRecyclerView() {
+    private fun setRecyclerView(items: HanokDetailItem) {
         //추천 리싸이클러뷰
-        var roomsList: ArrayList<Rooms> = ArrayList()
-        roomsList.add(Rooms("싱클룸", 1, 2))
-        roomsList.add(Rooms("트리플", 1, 2))
-        roomsList.add(Rooms("기타", 1, 2))
-
+        var roomsList: ArrayList<Rooms> = items.rooms
 
         var hanOkRecyclcerViewAdapter =
             HanOkRecyclcerViewAdapter(this, roomsList)
@@ -76,6 +72,7 @@ class HanokDetailActivity : AppCompatActivity(), OnMapReadyCallback {
                         Log.d(TAG, items.toString())
 
                         setContent(items)
+                        setRecyclerView(items)
                     }
                 }
             }
@@ -85,6 +82,23 @@ class HanokDetailActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun setContent(items: HanokDetailItem) {
         val location = LatLng(items.latitude, items.longitude)
         if (mMap != null) addMarker(mMap, location)
+
+        tv_ac_hanok_detail_name.text = items.name
+        tv_ac_hanok_detail_.text = items.type
+        tv_ac_hanok_detail_address.text = items.address
+        tv_ac_hanok_detail_address_map.text = items.address
+        tv_ac_hanok_detail_place.text = items.place
+        tv_ac_hanok_detail_detail.text = items.detail
+        tv_ac_hanok_detail_address_trans.text = items.transport
+
+        if (items.option != null && items.option != "") {
+            view_option.visibility = View.VISIBLE
+            ll_option.visibility = View.VISIBLE
+            tv_ac_hanok_detail_option.text = items.option
+        } else {
+            view_option.visibility = View.GONE
+            ll_option.visibility = View.GONE
+        }
     }
 
     private fun getMap() {
