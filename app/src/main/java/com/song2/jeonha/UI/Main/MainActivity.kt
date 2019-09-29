@@ -29,6 +29,8 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    var flag_first=0
+
     val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
     }
@@ -57,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         setClassProgramRecyclerView(arrayListData)
         setTitleRecyclerView()
 
+        setOnBtnClickListener()
         switch_main_main_act_selector.setOnCheckedChangeListener { button, checked ->
             if (!checked) {
                 //한옥통신
@@ -77,6 +80,17 @@ class MainActivity : AppCompatActivity() {
                     startActivity<ClassListActivity>()
                 }
             }
+        }
+    }
+
+    private fun setOnBtnClickListener() {
+        if(flag_first ==0){
+
+            iv_main_act_more_btn.setOnClickListener {
+                startActivity<HanokFilterActivity>()
+            }
+
+            flag_first =1
         }
     }
 

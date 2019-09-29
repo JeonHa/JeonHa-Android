@@ -6,17 +6,14 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.Window
-import android.widget.RadioButton
-import android.widget.RelativeLayout
 import android.widget.TextView
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassListItemData
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.ClassListItemData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetClassListResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import com.song2.jeonha.UI.Class.adapter.ClassListRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_class_list.*
-import kotlinx.android.synthetic.main.dialog_select_class.*
 import retrofit2.Call
 import retrofit2.Response
 
