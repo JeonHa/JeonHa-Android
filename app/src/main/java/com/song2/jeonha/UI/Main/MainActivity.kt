@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         ApplicationController.instance.networkService
     }
 
+    var b : Boolean = false
     lateinit var programListRecyclerViewAdapter: ProgramListRecyclerViewAdapter
     var arrayListData: ArrayList<ProgramData> = ArrayList()
     var arrayListClassData: ArrayList<ProgramData> = ArrayList()
@@ -60,7 +61,9 @@ class MainActivity : AppCompatActivity() {
             if (!checked) {
                 //한옥통신
                 Log.e("한옥통신", "In   " + switch_main_main_act_selector.isSelected())
+                b = false
                 setClassProgramRecyclerView(arrayListData)
+
                 iv_main_act_more_btn.setOnClickListener {
                     startActivity<HanokFilterActivity>()
                 }
@@ -68,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 //클래스통신
                 Log.e("클래스통신", "In   " + switch_main_main_act_selector.isSelected())
+                b = true
                 setClassProgramRecyclerView(arrayListClassData)
                 iv_main_act_more_btn.setOnClickListener {
                     startActivity<ClassListActivity>()
@@ -81,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("리사이클러뷰 Data", ":::confirm"+arrayListData.size)
 
 
-        programListRecyclerViewAdapter = ProgramListRecyclerViewAdapter(this, arrayListData)
+        programListRecyclerViewAdapter = ProgramListRecyclerViewAdapter(this, arrayListData,b)
         programListRecyclerViewAdapter.notifyDataSetChanged()
         rv_main_act_class_list.adapter = programListRecyclerViewAdapter
         rv_main_act_class_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)

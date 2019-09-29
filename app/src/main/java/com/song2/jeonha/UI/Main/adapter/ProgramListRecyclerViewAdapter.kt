@@ -1,6 +1,7 @@
 package com.song2.jeonha.UI.Main.adapter
 
 import android.content.Context
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +11,13 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.song2.jeonha.UI.Main.data.ProgramData
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Class.ClassDetailActivity
+import com.song2.jeonha.UI.Hanok.HanokDetailActivity
 import de.hdodenhof.circleimageview.CircleImageView
+import org.jetbrains.anko.startActivity
 
 
-class ProgramListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ProgramData>) : RecyclerView.Adapter<ProgramListRecyclerViewAdapter.Holder>() {
+class ProgramListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ProgramData>, var b : Boolean) : RecyclerView.Adapter<ProgramListRecyclerViewAdapter.Holder>() {
 
     override fun onCreateViewHolder(viewgroup: ViewGroup, position: Int): Holder {
 
@@ -30,7 +34,13 @@ class ProgramListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<P
 
         holder.programTitle.text = dataList[position].program_name
         holder.container.setOnClickListener {
-            //detailed 페이지로
+            if(b){
+                ctx.startActivity<ClassDetailActivity>("idx" to dataList[position].id)
+            }
+            else{
+                ctx.startActivity<HanokDetailActivity>("idx" to dataList[position].id)
+
+            }
         }
 
         Glide.with(ctx)
