@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok.adapter
+package com.song2.jeonha.UI.Hanok.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -12,8 +12,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.song2.jeonha.Hanok.HanokDetailActivity
-import com.song2.jeonha.Hanok.data.HanokItem
+import com.song2.jeonha.UI.Hanok.HanokDetailActivity
+import com.song2.jeonha.UI.Hanok.data.HanokItem
 import com.song2.jeonha.R
 
 class HanokListAdapter(var ctx: Context, var dataList: ArrayList<HanokItem>) :

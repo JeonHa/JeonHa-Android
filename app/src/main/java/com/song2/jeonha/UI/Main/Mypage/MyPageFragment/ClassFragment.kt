@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main.Mypage.MyPageFragment
+package com.song2.jeonha.UI.Main.Mypage.MyPageFragment
 
 
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.NetworkService
 

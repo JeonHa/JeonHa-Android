@@ -1,9 +1,9 @@
-package com.song2.jeonha.Splash
+package com.song2.jeonha.UI.Splash
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.song2.jeonha.Login.LoginActivity
+import com.song2.jeonha.UI.Login.LoginActivity
 import com.song2.jeonha.R
 import org.jetbrains.anko.startActivity
 

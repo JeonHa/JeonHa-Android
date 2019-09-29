@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok
+package com.song2.jeonha.UI.Hanok
 
 
 import android.os.Bundle

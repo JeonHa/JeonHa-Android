@@ -1,11 +1,11 @@
-package com.song2.jeonha.Class
+package com.song2.jeonha.UI.Class
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import com.song2.jeonha.Class.adapter.ClassBookDateRecyclerViewAdapter
-import com.song2.jeonha.Class.data.ClassDetailedData
+import com.song2.jeonha.UI.Class.adapter.ClassBookDateRecyclerViewAdapter
+import com.song2.jeonha.UI.Class.data.ClassDetailedData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetClassDetailResponse
 import com.song2.jeonha.Network.NetworkService

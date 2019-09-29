@@ -1,11 +1,11 @@
-package com.song2.jeonha.Main.Mypage
+package com.song2.jeonha.UI.Main.Mypage
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
-import com.song2.jeonha.Main.Mypage.TapAdapter.TapPagerAdapter
+import com.song2.jeonha.UI.Main.Mypage.TapAdapter.TapPagerAdapter
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_apply_history.*
 

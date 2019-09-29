@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main.data
+package com.song2.jeonha.UI.Main.data
 
 class ClassPrograms(
     val classIdx: Int,

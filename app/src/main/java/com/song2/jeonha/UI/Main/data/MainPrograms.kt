@@ -1,7 +1,4 @@
-package com.song2.jeonha.Main.data
-
-import com.song2.jeonha.Main.data.ClassPrograms
-import com.song2.jeonha.Main.data.HanokPrograms
+package com.song2.jeonha.UI.Main.data
 
 class MainPrograms(
     val hanokList: ArrayList<HanokPrograms>,

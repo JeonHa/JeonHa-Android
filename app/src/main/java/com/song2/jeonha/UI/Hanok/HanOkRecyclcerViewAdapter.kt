@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok
+package com.song2.jeonha.UI.Hanok
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.song2.jeonha.Hanok.data.Rooms
+import com.song2.jeonha.UI.Hanok.data.Rooms
 import com.song2.jeonha.R
 
 class HanOkRecyclcerViewAdapter(val ctx: Context, val roomsList: ArrayList<Rooms>) : RecyclerView.Adapter<HanOkRecyclcerViewAdapter.Holder>() {

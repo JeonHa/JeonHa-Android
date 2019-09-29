@@ -1,6 +1,4 @@
-package com.song2.jeonha.Class.data
-
-import com.song2.jeonha.Hanok.data.PhotoItem
+package com.song2.jeonha.UI.Class.data
 
 data class ClassDetailedData(
     val classIdx: Int,

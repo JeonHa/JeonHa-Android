@@ -1,4 +1,4 @@
-package com.song2.jeonha.Class
+package com.song2.jeonha.UI.Class
 
 import android.app.Dialog
 import android.support.v7.app.AppCompatActivity
@@ -8,8 +8,8 @@ import android.view.Window
 import android.widget.RadioButton
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.song2.jeonha.Class.adapter.ClassListRecyclerViewAdapter
-import com.song2.jeonha.Class.data.ClassData
+import com.song2.jeonha.UI.Class.adapter.ClassListRecyclerViewAdapter
+import com.song2.jeonha.UI.Class.data.ClassData
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_class_list.*
 

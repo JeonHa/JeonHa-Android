@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main.Mypage.MyPageFragment
+package com.song2.jeonha.UI.Main.Mypage.MyPageFragment
 
 
 import android.os.Bundle
@@ -8,16 +8,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.HanokData
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.HanokData
 import com.song2.jeonha.Network.ApplicationController
-import com.song2.jeonha.Network.Get.GetStampResponse
 import com.song2.jeonha.Network.NetworkService
 
 import com.song2.jeonha.R
-import kotlinx.android.synthetic.main.fragment_class.*
 import kotlinx.android.synthetic.main.fragment_stay.*
 import org.jetbrains.anko.support.v4.ctx
 import retrofit2.Call

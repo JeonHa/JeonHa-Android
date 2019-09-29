@@ -1,11 +1,10 @@
-package com.song2.jeonha.Main.Mypage.TapAdapter
+package com.song2.jeonha.UI.Main.Mypage.TapAdapter
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import com.song2.jeonha.Main.Mypage.MyPageFragment.ClassFragment
-import com.song2.jeonha.Main.Mypage.MyPageFragment.StayFragment
-import org.jetbrains.anko.db.classParser
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.ClassFragment
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.StayFragment
 
 class TapPagerAdapter(fm : FragmentManager, private val num_frament: Int):FragmentStatePagerAdapter(fm){
 /*

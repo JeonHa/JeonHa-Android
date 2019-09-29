@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main.adapter
+package com.song2.jeonha.UI.Main.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.song2.jeonha.Main.data.ProgramData
+import com.song2.jeonha.UI.Main.data.ProgramData
 import com.song2.jeonha.R
 import de.hdodenhof.circleimageview.CircleImageView
 

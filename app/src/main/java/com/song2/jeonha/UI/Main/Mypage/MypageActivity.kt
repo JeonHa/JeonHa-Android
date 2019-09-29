@@ -1,11 +1,9 @@
-package com.song2.jeonha.Main.Mypage
+package com.song2.jeonha.UI.Main.Mypage
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.song2.jeonha.Hanok.data.HanokItem
 import com.song2.jeonha.Network.ApplicationController
-import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
 import com.song2.jeonha.Network.NetworkService
 import kotlinx.android.synthetic.main.activity_mypage.*
@@ -13,19 +11,9 @@ import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.graphics.BitmapFactory
-import android.graphics.Bitmap
-import android.support.v4.app.SupportActivity
-import android.support.v4.app.SupportActivity.ExtraData
-import android.support.v4.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.support.v4.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.widget.Button
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.song2.jeonha.R
-import org.jetbrains.anko.toast
 
 
 class MypageActivity : AppCompatActivity() {

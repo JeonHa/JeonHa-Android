@@ -1,4 +1,4 @@
-package com.song2.jeonha.Map.data
+package com.song2.jeonha.UI.Map.data
 
 data class MapData(
     val hanokIdx : Int,

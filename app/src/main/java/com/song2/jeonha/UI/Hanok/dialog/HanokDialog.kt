@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok.dialog
+package com.song2.jeonha.UI.Hanok.dialog
 
 import android.os.Bundle
 import android.support.v4.app.DialogFragment

@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok
+package com.song2.jeonha.UI.Hanok
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -11,8 +11,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.song2.jeonha.Hanok.data.HanokDetailItem
-import com.song2.jeonha.Hanok.data.Rooms
+import com.song2.jeonha.UI.Hanok.data.HanokDetailItem
+import com.song2.jeonha.UI.Hanok.data.Rooms
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetHanokDetailResponse
 import com.song2.jeonha.Network.NetworkService

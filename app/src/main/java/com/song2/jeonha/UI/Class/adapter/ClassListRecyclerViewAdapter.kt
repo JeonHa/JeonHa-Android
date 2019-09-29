@@ -1,4 +1,4 @@
-package com.song2.jeonha.Class.adapter
+package com.song2.jeonha.UI.Class.adapter
 
 import android.content.Context
 import android.graphics.Color
@@ -11,8 +11,8 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.song2.jeonha.Class.ClassDetailActivity
-import com.song2.jeonha.Class.data.ClassData
+import com.song2.jeonha.UI.Class.ClassDetailActivity
+import com.song2.jeonha.UI.Class.data.ClassData
 import com.song2.jeonha.R
 import org.jetbrains.anko.startActivity
 

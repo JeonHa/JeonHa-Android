@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main
+package com.song2.jeonha.UI.Main
 
 import android.app.Activity
 import android.content.Intent
@@ -8,16 +8,16 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
-import com.song2.jeonha.Class.ClassListActivity
-import com.song2.jeonha.Main.Mypage.MypageActivity
-import com.song2.jeonha.Main.QRcode.QRcodeActivity
-import com.song2.jeonha.Main.adapter.ProgramListRecyclerViewAdapter
-import com.song2.jeonha.Main.adapter.TitleListRecyclerViewAdapter
-import com.song2.jeonha.Main.data.ProgramData
-import com.song2.jeonha.Main.data.TitleData
+import com.song2.jeonha.UI.Class.ClassListActivity
+import com.song2.jeonha.UI.Main.Mypage.MypageActivity
+import com.song2.jeonha.UI.Main.QRcode.QRcodeActivity
+import com.song2.jeonha.UI.Main.adapter.ProgramListRecyclerViewAdapter
+import com.song2.jeonha.UI.Main.adapter.TitleListRecyclerViewAdapter
+import com.song2.jeonha.UI.Main.data.ProgramData
+import com.song2.jeonha.UI.Main.data.TitleData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetMainResponse
-import com.song2.jeonha.Main.data.MainPrograms
+import com.song2.jeonha.UI.Main.data.MainPrograms
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_main.*

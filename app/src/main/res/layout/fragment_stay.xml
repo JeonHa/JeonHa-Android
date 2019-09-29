@@ -5,7 +5,7 @@
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:background="#ffffff"
-        tools:context=".Main.Mypage.MyPageFragment.StayFragment">
+        tools:context=".UI.Main.Mypage.MyPageFragment.StayFragment">
 <ScrollView
         android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"

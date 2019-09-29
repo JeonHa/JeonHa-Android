@@ -1,6 +1,6 @@
 package com.song2.jeonha.Network.Get
 
-import com.song2.jeonha.Class.data.ClassDetailedData
+import com.song2.jeonha.UI.Class.data.ClassDetailedData
 
 data class GetClassDetailResponse (
     val success: Boolean,

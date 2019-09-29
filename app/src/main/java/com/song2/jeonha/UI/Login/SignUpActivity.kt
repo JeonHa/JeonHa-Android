@@ -1,16 +1,14 @@
-package com.song2.jeonha.Login
+package com.song2.jeonha.UI.Login
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.song2.jeonha.Main.MainActivity
+import com.song2.jeonha.UI.Main.MainActivity
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.Network.Post.PostUserSignUp
 import com.song2.jeonha.Network.Post.Response.PostUserSignUpResponse
 import com.song2.jeonha.R
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast

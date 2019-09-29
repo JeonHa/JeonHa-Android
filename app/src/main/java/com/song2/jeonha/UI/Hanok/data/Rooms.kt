@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok.data
+package com.song2.jeonha.UI.Hanok.data
 
 data class Rooms(
 

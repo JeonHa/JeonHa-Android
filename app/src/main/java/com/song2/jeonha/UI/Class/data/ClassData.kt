@@ -1,4 +1,4 @@
-package com.song2.jeonha.Class.data
+package com.song2.jeonha.UI.Class.data
 
 data class ClassData(
     var id : Int,

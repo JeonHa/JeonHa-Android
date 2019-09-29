@@ -1,4 +1,4 @@
-package com.song2.jeonha.Main.Mypage.MyPageFragment
+package com.song2.jeonha.UI.Main.Mypage.MyPageFragment
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -9,8 +9,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.HanokData
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.HanokData
 import com.song2.jeonha.R
 
 class HanokStayBookingRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<HanokData?>) : RecyclerView.Adapter<HanokStayBookingRecyclerViewAdapter.Holder>() {

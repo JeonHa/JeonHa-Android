@@ -1,4 +1,4 @@
-package com.song2.jeonha.Hanok
+package com.song2.jeonha.UI.Hanok
 
 import android.app.Dialog
 import android.support.v7.app.AppCompatActivity
@@ -7,15 +7,14 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.RadioButton
-import com.song2.jeonha.Hanok.adapter.HanokListAdapter
-import com.song2.jeonha.Hanok.data.HanokItem
+import com.song2.jeonha.UI.Hanok.adapter.HanokListAdapter
+import com.song2.jeonha.UI.Hanok.data.HanokItem
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_hanok_filter.*
 import kotlinx.android.synthetic.main.dialog_hanok.*
-import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
