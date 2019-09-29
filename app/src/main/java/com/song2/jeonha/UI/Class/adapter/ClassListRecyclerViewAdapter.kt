@@ -11,13 +11,13 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.ClassListItemData
 import com.song2.jeonha.UI.Class.ClassDetailActivity
-import com.song2.jeonha.UI.Class.data.ClassData
 import com.song2.jeonha.R
 import org.jetbrains.anko.startActivity
 
 
-class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassData>) : RecyclerView.Adapter<ClassListRecyclerViewAdapter.Holder>() {
+class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassListItemData>) : RecyclerView.Adapter<ClassListRecyclerViewAdapter.Holder>() {
 
     override fun onCreateViewHolder(viewgroup: ViewGroup, position: Int): Holder {
 
@@ -32,24 +32,26 @@ class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Cla
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
-        holder.classTitle.text = dataList[position].class_title
+        holder.classTitle.text = dataList[position].name
         //holder.classDay.text
         holder.container.setOnClickListener {
-            ctx.startActivity<ClassDetailActivity>("idx" to dataList[position].id)
+            ctx.startActivity<ClassDetailActivity>("idx" to dataList[position].classIdx)
         }
 
+/*        var store_day = dataList[position].weekday.split(" ") as ArrayList<String>
+
         var test = ""
-        for (i in 0..dataList[position].day!!.size-1){
+        for (i in 0..store_day.size-1){
             if(i !=0)
                 test +="·"
 
-            test += dataList[position].day!![i]
-        }
+            test += store_day[i]
+        }*/
 
-        holder.classDay.text = test
+        holder.classDay.text = dataList[position].weekday
 
         Glide.with(ctx)
-            .load(dataList[position].class_img)
+            .load(dataList[position].img)
             .into(holder.classImg)
 
         holder.classImg.setColorFilter(Color.parseColor("#BDBDBD"), PorterDuff.Mode.MULTIPLY)

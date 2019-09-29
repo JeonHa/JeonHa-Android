@@ -86,11 +86,15 @@ interface NetworkService {
         @Header("authorization") token: String
     ): Call<GetMainResponse>
 
+    @GET("/class")
+    fun getClassListResponse(
+        @Query ("day") day : Int
+    ): Call<GetClassListResponse>
+
     //클래스 디테일
     @GET("/class/{classIdx}")
     fun getClassDetailResponse(
         @Path("classIdx") classIdx: Int
     ): Call<GetClassDetailResponse>
-
 }
 

@@ -8,7 +8,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
-import com.song2.jeonha.UI.Class.ClassListActivity
 import com.song2.jeonha.UI.Main.Mypage.MypageActivity
 import com.song2.jeonha.UI.Main.QRcode.QRcodeActivity
 import com.song2.jeonha.UI.Main.adapter.ProgramListRecyclerViewAdapter
@@ -20,6 +19,8 @@ import com.song2.jeonha.Network.Get.GetMainResponse
 import com.song2.jeonha.UI.Main.data.MainPrograms
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Class.ClassListActivity
+import com.song2.jeonha.UI.Hanok.HanokFilterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 import org.jetbrains.anko.startActivity
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         ApplicationController.instance.networkService
     }
 
+    var b : Boolean = false
     lateinit var programListRecyclerViewAdapter: ProgramListRecyclerViewAdapter
     var arrayListData: ArrayList<ProgramData> = ArrayList()
     var arrayListClassData: ArrayList<ProgramData> = ArrayList()
@@ -51,10 +53,6 @@ class MainActivity : AppCompatActivity() {
             onQrcodeScanner()
         }
 
-        iv_main_act_more_btn.setOnClickListener {
-            startActivity<ClassListActivity>()
-        }
-
         getMainProgramsResponse()
         setClassProgramRecyclerView(arrayListData)
         setTitleRecyclerView()
@@ -63,17 +61,18 @@ class MainActivity : AppCompatActivity() {
             if (!checked) {
                 //한옥통신
                 Log.e("한옥통신", "In   " + switch_main_main_act_selector.isSelected())
+                b = false
                 setClassProgramRecyclerView(arrayListData)
+
                 iv_main_act_more_btn.setOnClickListener {
-                    startActivity<ClassListActivity>()
+                    startActivity<HanokFilterActivity>()
                 }
 
             } else {
                 //클래스통신
                 Log.e("클래스통신", "In   " + switch_main_main_act_selector.isSelected())
-
+                b = true
                 setClassProgramRecyclerView(arrayListClassData)
-
                 iv_main_act_more_btn.setOnClickListener {
                     startActivity<ClassListActivity>()
                 }
@@ -86,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("리사이클러뷰 Data", ":::confirm"+arrayListData.size)
 
 
-        programListRecyclerViewAdapter = ProgramListRecyclerViewAdapter(this, arrayListData)
+        programListRecyclerViewAdapter = ProgramListRecyclerViewAdapter(this, arrayListData,b)
         programListRecyclerViewAdapter.notifyDataSetChanged()
         rv_main_act_class_list.adapter = programListRecyclerViewAdapter
         rv_main_act_class_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)

@@ -32,7 +32,7 @@ class ClassDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_class_detail)
 
         classIdx = intent.getIntExtra("idx", -1)
-        getClassDetailResponse(2!!)
+        getClassDetailResponse(classIdx!!)
 
         //getClassDetailResponse(classIdx!!)
     }

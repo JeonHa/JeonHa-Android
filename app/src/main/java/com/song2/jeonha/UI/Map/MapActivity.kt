@@ -17,13 +17,13 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-import com.song2.jeonha.UI.Class.ClassListActivity
 import com.song2.jeonha.UI.Hanok.HanokDetailActivity
 import com.song2.jeonha.UI.Map.data.MapData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Class.ClassListActivity
 import kotlinx.android.synthetic.main.activity_map.*
 import kotlinx.android.synthetic.main.toolbar_map.*
 import org.jetbrains.anko.startActivity
