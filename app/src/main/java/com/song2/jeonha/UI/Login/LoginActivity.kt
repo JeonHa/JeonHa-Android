@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.UI.Main.MainActivity
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.NetworkService
@@ -131,8 +132,8 @@ class LoginActivity : AppCompatActivity() {
                     if(response.isSuccessful){
                         if (response.body()!!.status==200) {
                             startActivity<MainActivity>()
+                            SharedPreferenceController.setAccessToken(this@LoginActivity,response.body()!!.data.authorization.toString())
                             Log.e("login success","로그인 성공"+response.body()+"/"+response.code())
-
                             finish()
                         } else if(response.body()!!.status ==400){
                             Log.e("login success","로그인 에러1"+response.body()+"/"+response.code())

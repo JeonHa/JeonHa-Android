@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.google.zxing.integration.android.IntentIntegrator
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.UI.Main.Mypage.MypageActivity
 import com.song2.jeonha.UI.Main.QRcode.QRcodeActivity
 import com.song2.jeonha.UI.Main.adapter.ProgramListRecyclerViewAdapter
@@ -28,6 +29,7 @@ import com.song2.jeonha.UI.Hanok.HanokFilterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
@@ -200,8 +202,7 @@ class MainActivity : AppCompatActivity() {
     fun getMainProgramsResponse() {
 
         val getProgramsKeywordResponse = networkService.getMainResponse(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEsImlhdCI6MTU2OTIwODA0NSwiZXhwIjoxNTY5ODEyODQ1LCJpc3MiOiJqZW9uaGEyMDE5In0.D9Ao9zBftj5qdd1NL8lSk_--0hPir8Du3tTZs834Afw"
-        )
+            SharedPreferenceController.getAccessToken(this))
 
         getProgramsKeywordResponse.enqueue(object : retrofit2.Callback<GetMainResponse> {
             override fun onFailure(call: Call<GetMainResponse>, t: Throwable) {
@@ -234,7 +235,7 @@ class MainActivity : AppCompatActivity() {
 //Gson 라이브러리의 Json Parser을 통해 객체를 Json으로!
         val gsonObject = JsonParser().parse(jsonObject.toString()) as JsonObject
         val postQrcodeScanResponse = networkService.postQrcodeScanResponse(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEsImlhdCI6MTU2OTIwODA0NSwiZXhwIjoxNTY5ODEyODQ1LCJpc3MiOiJqZW9uaGEyMDE5In0.D9Ao9zBftj5qdd1NL8lSk_--0hPir8Du3tTZs834Afw",gsonObject)
+            SharedPreferenceController.getAccessToken(this),gsonObject)
 
         postQrcodeScanResponse.enqueue(object : retrofit2.Callback<PostQrcodeScanResponse> {
             override fun onFailure(call: Call<PostQrcodeScanResponse>, t: Throwable) {

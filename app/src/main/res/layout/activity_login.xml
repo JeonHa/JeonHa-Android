@@ -42,11 +42,12 @@
                     android:orientation="horizontal">
 
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/king"/>
 
                 <EditText
+                        android:text="jeonha"
                         android:id="@+id/et_ac_login_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -89,11 +90,12 @@
                     android:orientation="horizontal">
 
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/king"/>
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/naeshi"/>
 
                 <EditText
+                        android:text="1234"
                         android:id="@+id/et_ac_login_pw"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

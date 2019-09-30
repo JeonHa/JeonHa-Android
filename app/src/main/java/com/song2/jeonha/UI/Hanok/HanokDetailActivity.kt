@@ -19,6 +19,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.UI.Hanok.data.HanokDetailItem
 import com.song2.jeonha.UI.Hanok.data.Rooms
 import com.song2.jeonha.Network.ApplicationController
@@ -173,7 +174,7 @@ class HanokDetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun postBookingResponse(idx: Int) {
         val postBookingResponse = networkService.getBookingResponse(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEsImlhdCI6MTU2OTIwODA0NSwiZXhwIjoxNTY5ODEyODQ1LCJpc3MiOiJqZW9uaGEyMDE5In0.D9Ao9zBftj5qdd1NL8lSk_--0hPir8Du3tTZs834Afw",
+            SharedPreferenceController.getAccessToken(this),
             idx
         )
         postBookingResponse.enqueue(object : Callback<BookingData> {
