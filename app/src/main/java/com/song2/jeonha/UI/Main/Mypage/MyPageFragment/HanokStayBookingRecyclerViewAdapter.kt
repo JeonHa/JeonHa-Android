@@ -11,6 +11,9 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.HanokData
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Class.ClassDetailActivity
+import com.song2.jeonha.UI.Hanok.HanokDetailActivity
+import org.jetbrains.anko.startActivity
 
 class HanokStayBookingRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<HanokData?>) : RecyclerView.Adapter<HanokStayBookingRecyclerViewAdapter.Holder>() {
 
@@ -31,7 +34,8 @@ class HanokStayBookingRecyclerViewAdapter(var ctx: Context, var dataList: ArrayL
         holder.tv_rv_stay_summery_place.text = dataList[position]!!.place
         holder.tv_rv_stay_class_address.text = dataList[position]!!.address
         holder.rl_item_stay_all.setOnClickListener {
-            //detailed 페이지로 idx 값 넘겨야함
+            ctx.startActivity<HanokDetailActivity>("idx" to dataList[position]!!.hanokIdx)//detailed 페이지로 idx 값 넘겨야함
+
         }
 
         Glide.with(ctx)

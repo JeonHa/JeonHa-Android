@@ -11,6 +11,7 @@ import com.song2.jeonha.Network.Get.GetClassDetailResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_class_detail.*
+import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,8 +31,12 @@ class ClassDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_class_detail)
-
+        iv_class_detail_back_btn.setOnClickListener {
+            finish()
+        }
         classIdx = intent.getIntExtra("idx", -1)
+
+        //toast(classIdx.toString())
         getClassDetailResponse(classIdx!!)
 
         //getClassDetailResponse(classIdx!!)

@@ -79,71 +79,57 @@ class HanokDetailActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == 200) {
                         val items: HanokDetailItem = response.body()!!.data
-
-                        for (i in 0..response.body()!!.data.img.size - 1) {
-                            PhotoItemLIst.add(response.body()!!.data.img[i].img)
-                        }
                         Log.d(TAG, items.toString())
-                        vp_main_slider.adapter = SliderMainPagerAdapter(
-                            supportFragmentManager,
-                            response.body()!!.data.img.size,
-                            PhotoItemLIst
-                        )
-                        vp_main_slider.offscreenPageLimit = 2
-                        tl_main_indicator.setupWithViewPager(vp_main_slider)
-                        tv_ac_hanok_detail_.text = response.body()!!.data.type
-                        tv_detail_addres1.text = response.body()!!.data.place
-                        tv_ac_hanok_detail_name.text = response.body()!!.data.name
-                        tv_ac_hanok_detail_address.text = response.body()!!.data.address
-                        tv_ac_.text = response.body()!!.data.detail
-                        tv_hanok_ad.text = response.body()!!.data.address
-                        tv_ha_tran.text = response.body()!!.data.transport
-                        var roomsList: ArrayList<Rooms> = ArrayList()
-                        roomsList = response.body()!!.data.rooms
-                        var hanOkRecyclcerViewAdapter =
-                            HanOkRecyclcerViewAdapter(this@HanokDetailActivity, roomsList)
-                        rv_ac_hanok_detail_room.adapter = hanOkRecyclcerViewAdapter
-                        rv_ac_hanok_detail_room.layoutManager = LinearLayoutManager(
-                            this@HanokDetailActivity,
-                            LinearLayoutManager.HORIZONTAL,
-                            false
-                        )
-                        //mMap = googleMap
-                        val location = LatLng(
-                            response.body()!!.data.latitude,
-                            response.body()!!.data.longitude
-                        )
-                        if (mMap != null) addMarker(mMap, location)
 
-                        // setContent(items)
+                        setContent(items)
                     }
                 }
             }
         })
     }
 
-    /*  private fun setContent(items: HanokDetailItem) {
-        val location = LatLng(items.latitude, items.longitude)
-        if (mMap != null) addMarker(mMap, location)
+   private fun setContent(items: HanokDetailItem) {
+       tv_ac_hanok_detail_.text=items.type
+       tv_detail_addres1.text=items.place
+       tv_ac_hanok_detail_name.text=items.name
+       tv_ac_hanok_detail_address.text=items.address
+       tv_ac_hanok_detail_detail.text=items.detail
+       tv_hanok_ad.text=items.address
+       tv_ha_tran.text=items.transport
 
-        tv_ac_hanok_detail_name.text = items.name
-        tv_ac_hanok_detail_.text = items.type
-        tv_ac_hanok_detail_address.text = items.address
-        tv_ac_hanok_detail_address_map.text = items.address
-        tv_ac_hanok_detail_place.text = items.place
-        tv_ac_hanok_detail_detail.text = items.detail
-        tv_ac_hanok_detail_address_trans.text = items.transport
+       if (items.option != null && items.option != "") {
+           view_option.visibility = View.VISIBLE
+           ll_option.visibility = View.VISIBLE
+           tv_ac_hanok_detail_option.text = items.option
+       } else {
+           view_option.visibility = View.GONE
+           ll_option.visibility = View.GONE
+       }
 
-        if (items.option != null && items.option != "") {
-            view_option.visibility = View.VISIBLE
-            ll_option.visibility = View.VISIBLE
-            tv_ac_hanok_detail_option.text = items.option
-        } else {
-            view_option.visibility = View.GONE
-            ll_option.visibility = View.GONE
-        }
+       setAdapter(items)
+
+       //mMap = googleMap
+       val location = LatLng(items.latitude, items.longitude)
+       if (mMap != null) addMarker(mMap, location)
+
     }
-*/
+
+    private fun setAdapter(items: HanokDetailItem) {
+        for (i in 0 until items.img.size-1){
+            PhotoItemLIst.add(items.img[i].img)
+        }
+        vp_main_slider.adapter= SliderMainPagerAdapter(supportFragmentManager,items.img.size, PhotoItemLIst)
+        vp_main_slider.offscreenPageLimit=2
+        tl_main_indicator.setupWithViewPager(vp_main_slider)
+
+
+        var roomsList: ArrayList<Rooms> = ArrayList()
+        roomsList=items.rooms
+        var hanOkRecyclcerViewAdapter = HanOkRecyclcerViewAdapter(this@HanokDetailActivity, roomsList)
+        rv_ac_hanok_detail_room.adapter = hanOkRecyclcerViewAdapter
+        rv_ac_hanok_detail_room.layoutManager = LinearLayoutManager(this@HanokDetailActivity, LinearLayoutManager.HORIZONTAL, false)
+    }
+
     private fun getMap() {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.frag_detail_map) as SupportMapFragment?
