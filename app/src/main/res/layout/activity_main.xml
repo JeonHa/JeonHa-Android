@@ -48,7 +48,7 @@
                         android:layout_marginTop="42.5dp"
                         android:thumb="@drawable/switch_thumb_selector"
                         android:track="@drawable/switch_track_selector"/>
-                <HorizontalScrollView
+                <android.support.v4.widget.NestedScrollView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/switch_main_main_act_selector"
@@ -71,7 +71,7 @@
                         </android.support.v7.widget.RecyclerView>
                     </LinearLayout>
 
-                </HorizontalScrollView>
+                </android.support.v4.widget.NestedScrollView>
 
             </RelativeLayout>
 

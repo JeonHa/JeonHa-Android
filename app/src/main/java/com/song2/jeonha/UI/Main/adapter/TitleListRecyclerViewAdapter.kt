@@ -43,13 +43,14 @@ class TitleListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Tit
         holder.container.setOnClickListener {
             ctx.startActivity<WebViewMainActivity>("uriAddress" to dataList[position].uri_address)
         }
-        if (position == 0) {
+
+        if (position == 4) {
             holder.titleImg1.visibility = VISIBLE
             holder.titleImg2.visibility = GONE
             holder.titleImg3.visibility = GONE
             holder.titleImg4.visibility = GONE
             holder.titleImg5.visibility = GONE
-        } else if (position == 1) {
+        } else if (position == 0) {
             holder.titleImg1.visibility = GONE
             holder.titleImg2.visibility = VISIBLE
             holder.titleImg3.visibility = GONE
@@ -67,7 +68,7 @@ class TitleListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Tit
             holder.titleImg3.visibility = GONE
             holder.titleImg4.visibility = VISIBLE
             holder.titleImg5.visibility = GONE
-        }else if (position == 4) {
+        }else if (position == 1) {
             holder.titleImg1.visibility = GONE
             holder.titleImg2.visibility = GONE
             holder.titleImg3.visibility = GONE

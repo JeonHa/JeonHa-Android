@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         ApplicationController.instance.networkService
     }
 
+    var isVisited = false;
     var b : Boolean = false
     lateinit var programListRecyclerViewAdapter: ProgramListRecyclerViewAdapter
     var arrayListData: ArrayList<ProgramData> = ArrayList()
@@ -57,7 +58,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         getMainProgramsResponse()
-        setClassProgramRecyclerView(arrayListData)
+
+        //setClassProgramRecyclerView(arrayListData)
         setTitleRecyclerView()
 
         setOnBtnClickListener()
@@ -120,16 +122,16 @@ class MainActivity : AppCompatActivity() {
 
             )
         )
-
         titleListData.add(
             TitleData(
-                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
-                "북촌 한옥 마을에서 만나는 맛집 10선",
-                "구경도 하고, 배도 채우고 !\n" +
-                        "입 안 가득 채워지는 우리의 맛\n",
-                "http://naver.me/5l8Meuhk"
+                "https://post-phinf.pstatic.net/MjAxODA4MTNfMTU3/MDAxNTM0MTUyMDY3NzA1.NTuGE6MSj6GfMI5SmGlqH0n9OQWE_RXP_v3TZi93ovIg.aV01K90j0xnor7bnrDBJQwt0Ij_Q3eIDZNWHPs21Dd0g.JPEG/%ED%83%88%EB%B0%A9.JPG?type=w1200",
+                "오래된 한국의 공방, 오래가게 8선",
+                "익숙해서 눈치채지 못했던,\n" +
+                        "한국의 전통 공예의 아름다움이 가득한 공방 8곳",
+                "http://naver.me/xzVISbSK"
             )
         )
+
 
 
         titleListData.add(
@@ -151,15 +153,20 @@ class MainActivity : AppCompatActivity() {
                 "http://naver.me/F1jurbnS"
             )
         )
+
+
         titleListData.add(
             TitleData(
-                "https://post-phinf.pstatic.net/MjAxODA4MTNfMTU3/MDAxNTM0MTUyMDY3NzA1.NTuGE6MSj6GfMI5SmGlqH0n9OQWE_RXP_v3TZi93ovIg.aV01K90j0xnor7bnrDBJQwt0Ij_Q3eIDZNWHPs21Dd0g.JPEG/%ED%83%88%EB%B0%A9.JPG?type=w1200",
-                "오래된 한국의 공방, 오래가게 8선",
-                "익숙해서 눈치채지 못했던,\n" +
-                        "한국의 전통 공예의 아름다움이 가득한 공방 8곳",
-                "http://naver.me/xzVISbSK"
+                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
+                "북촌 한옥 마을에서 만나는 맛집 10선",
+                "구경도 하고, 배도 채우고 !\n" +
+                        "입 안 가득 채워지는 우리의 맛\n",
+                "http://naver.me/5l8Meuhk"
             )
         )
+
+
+
 
         arrayListData.clear()
         titleListRecyclerViewAdapter = TitleListRecyclerViewAdapter(this, titleListData)
@@ -238,6 +245,11 @@ class MainActivity : AppCompatActivity() {
             )
             arrayListClassData.add(programData)
             Log.e("classList Data", ":::confirm")
+        }
+
+        if(!isVisited){
+            isVisited = !isVisited
+            setClassProgramRecyclerView(arrayListData);
         }
     }
 
