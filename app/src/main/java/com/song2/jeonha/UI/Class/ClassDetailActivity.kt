@@ -1,14 +1,20 @@
 package com.song2.jeonha.UI.Class
 
+import android.app.Dialog
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.Window
+import android.widget.TextView
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.UI.Class.adapter.ClassBookDateRecyclerViewAdapter
 import com.song2.jeonha.UI.Class.data.ClassDetailedData
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetClassDetailResponse
 import com.song2.jeonha.Network.NetworkService
+import com.song2.jeonha.NetworkDataClass.BookingData
 import com.song2.jeonha.R
 import com.song2.jeonha.UI.Hanok.adapter.SliderMainPagerAdapter
 import kotlinx.android.synthetic.main.activity_class_detail.*
@@ -40,6 +46,9 @@ class ClassDetailActivity : AppCompatActivity() {
         }
         classIdx = intent.getIntExtra("idx", -1)
 
+        iv_ac_hanok_detail_order.setOnClickListener {
+            postClassBookingResponse(intent.getIntExtra("weekIdx", -1))
+        }
         //toast(classIdx.toString())
         getClassDetailResponse(classIdx!!)
 
@@ -100,5 +109,64 @@ class ClassDetailActivity : AppCompatActivity() {
     }
 
 
+    private fun postClassBookingResponse(idx: Int) {
+        val getClassBookingResponse = networkService.getClassBookingResponse(
+            SharedPreferenceController.getAccessToken(this),
+            idx
+        )
+        getClassBookingResponse.enqueue(object : Callback<BookingData> {
+            override fun onFailure(call: Call<BookingData>, t: Throwable) {
+                Log.e("booking Fail", "예약 시스템 시류ㅐ")
+            }
+
+            override fun onResponse(call: Call<BookingData>, response: Response<BookingData>) {
+                if (response.isSuccessful) {
+                    Log.e("booking Fail", response.body()!!.status.toString())
+                    //  Toast.makeText(this@HanokDetailActivity,response.body()!!.resMessage,Toast.LENGTH_SHORT).show()
+                    toast(response.body()!!.status.toString())
+                    if (response.body()!!.status==201) {
+                        Log.e("booking Fail", "이미 신청한 예약입니다")
+                        orderokBtn(this@ClassDetailActivity)
+                    }
+                    else if (response.body()!!.status==204 ){
+                        Log.e("booking Fail", "예약 시스템 204")
+                        ordercancelBtn(this@ClassDetailActivity)
+                    }else{
+                        toast("알 수 없는 오류 입니다.")
+                    }
+                }
+            }
+        })
+
+    }
+
+    public fun orderokBtn(context: Context) {
+
+        val dlg = Dialog(context)
+
+        dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dlg.setContentView(R.layout.dialog_orderok)
+        dlg.show()
+
+        val dialogQuit = dlg.findViewById<TextView>(R.id.btn_dialog_hanok_ok1)
+
+        dialogQuit.setOnClickListener {
+            dlg.dismiss()
+        }
+    }
+    public  fun ordercancelBtn(context: Context) {
+
+        val dlg = Dialog(context)
+
+        dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dlg.setContentView(R.layout.dialog_ordercancel)
+        dlg.show()
+
+        val dialogQuit = dlg.findViewById<TextView>(R.id.btn_dialog_hanok_ok2)
+
+        dialogQuit.setOnClickListener {
+            dlg.dismiss()
+        }
+    }
 
 }

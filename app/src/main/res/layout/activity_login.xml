@@ -177,7 +177,7 @@
     <TextView
             android:id="@+id/tv_ac_login_forget_idpw"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/li_ac_login"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -189,7 +189,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/li_ac_login"
-            app:layout_constraintVertical_bias="0.921" />
+            app:layout_constraintVertical_bias="0.756" />
 
 
 </android.support.constraint.ConstraintLayout>
