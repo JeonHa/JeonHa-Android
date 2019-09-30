@@ -128,7 +128,7 @@ class ClassDetailActivity : AppCompatActivity() {
                         Log.e("booking Fail", "이미 신청한 예약입니다")
                         orderokBtn(this@ClassDetailActivity)
                     }
-                    else if (response.body()!!.status==204 ){
+                    else if (response.body()!!.status==204){
                         Log.e("booking Fail", "예약 시스템 204")
                         ordercancelBtn(this@ClassDetailActivity)
                     }else{
