@@ -10,7 +10,11 @@ import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetClassDetailResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Hanok.adapter.SliderMainPagerAdapter
 import kotlinx.android.synthetic.main.activity_class_detail.*
+import kotlinx.android.synthetic.main.activity_class_detail.tl_main_indicator
+import kotlinx.android.synthetic.main.activity_class_detail.vp_main_slider
+import kotlinx.android.synthetic.main.activity_hanok_detail.*
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -70,6 +74,20 @@ class ClassDetailActivity : AppCompatActivity() {
                 str+="·"
             str += items.schedule.get(i).weekday
         }
+
+        Log.e(TAG, items.toString())
+
+        var imgArrayList = ArrayList<String>()
+
+        Log.e(TAG+":", items.toString()+"..." +items.img.indices)
+        for(i in items.img.indices){
+            imgArrayList.add(items.img.get(i).img)
+        }
+
+        vp_main_slider.adapter= SliderMainPagerAdapter(supportFragmentManager,items.img.size, imgArrayList)
+        vp_main_slider.offscreenPageLimit=2
+        tl_main_indicator.setupWithViewPager(vp_main_slider)
+
 
         tv_class_detail_act_day.setText(str)
         tv_class_detail_act_name.setText(items.name)

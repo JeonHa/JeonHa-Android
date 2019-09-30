@@ -15,6 +15,7 @@ import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
 import kotlinx.android.synthetic.main.activity_hanok_filter.*
 import kotlinx.android.synthetic.main.dialog_hanok.*
+import kotlinx.android.synthetic.main.toolbar_hanok_filter.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,6 +50,10 @@ class HanokFilterActivity : AppCompatActivity() {
     private fun setOnBtnClickListener() {
         img_hanok_filter_act_filter.setOnClickListener {
             showDialog()
+        }
+
+        btn_tb_class_list_back.setOnClickListener {
+            finish()
         }
     }
 

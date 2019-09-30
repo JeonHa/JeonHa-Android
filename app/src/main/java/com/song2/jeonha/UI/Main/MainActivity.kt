@@ -2,7 +2,6 @@ package com.song2.jeonha.UI.Main
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -25,7 +24,7 @@ import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.Network.Post.PostQrcodeScanResponse
 import com.song2.jeonha.R
 import com.song2.jeonha.UI.Class.ClassListActivity
-import com.song2.jeonha.UI.Hanok.HanokFilterActivity
+import com.song2.jeonha.UI.Map.MapActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 import org.jetbrains.anko.startActivity
@@ -77,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 setClassProgramRecyclerView(arrayListData)
 
                 iv_main_act_more_btn.setOnClickListener {
-                    startActivity<HanokFilterActivity>()
+                    startActivity<MapActivity>()
                 }
 
             } else {
@@ -96,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         if(flag_first ==0){
 
             iv_main_act_more_btn.setOnClickListener {
-                startActivity<HanokFilterActivity>()
+                startActivity<MapActivity>()
             }
 
             flag_first =1

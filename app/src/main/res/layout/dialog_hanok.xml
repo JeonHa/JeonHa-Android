@@ -35,7 +35,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="마포구" />
 
@@ -45,7 +45,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="시청" />
 
@@ -55,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="동대문" />
 
@@ -65,7 +65,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="강남" />
 
@@ -75,7 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="신촌ㆍ홍대" />
 
@@ -85,8 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingTop="9dp"
-                        android:paddingBottom="15dp"
+                        android:paddingVertical="6dp"
                         android:paddingLeft="26dp"
                         android:text="고궁" />
 
@@ -96,7 +95,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="용산ㆍ여의도" />
 
@@ -106,7 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="잠실" />
 
@@ -116,7 +115,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:paddingVertical="6dp"
+                        android:paddingVertical="8dp"
                         android:paddingLeft="26dp"
                         android:text="그 외 지역" />
             </RadioGroup>

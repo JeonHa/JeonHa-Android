@@ -13,6 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.R
 
 
@@ -48,7 +49,7 @@ class MypageActivity : AppCompatActivity() {
         }
     }
     private fun getStampHResponse() {
-        val getStampListResponse = networkService.getStampResponse("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjMsImlhdCI6MTU2OTUwMDMxMCwiZXhwIjoxNTcwMTA1MTEwLCJpc3MiOiJqZW9uaGEyMDE5In0.BEilMzrtMn4JPvotwmFqEmMEM5GNzqAPqk5I_Sqise4")
+        val getStampListResponse = networkService.getStampResponse(SharedPreferenceController.getAccessToken(this))
         getStampListResponse.enqueue(object : Callback<GetStampResponse> {
             override fun onFailure(call: Call<GetStampResponse>, t: Throwable) {
                 Log.e("StampList Fail",t.toString())

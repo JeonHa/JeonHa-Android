@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
 import com.song2.jeonha.Network.ApplicationController
@@ -44,7 +45,8 @@ class ClassFragment : Fragment() {
     }
 
     private fun getClassBookingListResponse() {
-        val getClassBookingListResponse = networkService.getClassBookingListResponse("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEsImlhdCI6MTU2OTIwODA0NSwiZXhwIjoxNTY5ODEyODQ1LCJpc3MiOiJqZW9uaGEyMDE5In0.D9Ao9zBftj5qdd1NL8lSk_--0hPir8Du3tTZs834Afw")
+        val getClassBookingListResponse = networkService.getClassBookingListResponse(
+            SharedPreferenceController.getAccessToken(ctx))
         getClassBookingListResponse.enqueue(object : Callback<GetBookingClassListResponse> {
             override fun onFailure(call: Call<GetBookingClassListResponse>, t: Throwable) {
                 Log.e("GET Class Booking List Fail",t.toString())

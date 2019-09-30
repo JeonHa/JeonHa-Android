@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.HanokData
 import com.song2.jeonha.Network.ApplicationController
@@ -45,7 +46,8 @@ class StayFragment : Fragment() {
     }
 
     private fun getHanokBookingListResponse() {
-        val getHanokBookingListResponse = networkService.getHanokBookingListResponse("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEsImlhdCI6MTU2OTIwODA0NSwiZXhwIjoxNTY5ODEyODQ1LCJpc3MiOiJqZW9uaGEyMDE5In0.D9Ao9zBftj5qdd1NL8lSk_--0hPir8Du3tTZs834Afw")
+        val getHanokBookingListResponse = networkService.getHanokBookingListResponse(
+            SharedPreferenceController.getAccessToken(ctx))
         getHanokBookingListResponse.enqueue(object : Callback<GetBookingHanokListResponse> {
             override fun onFailure(call: Call<GetBookingHanokListResponse>, t: Throwable) {
                 Log.e("GET Hanok Booking List Fail",t.toString())
