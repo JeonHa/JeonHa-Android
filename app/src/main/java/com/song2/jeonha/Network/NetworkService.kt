@@ -125,9 +125,8 @@ interface NetworkService {
     @POST("/class/{weekIdx}/reservation")
     fun getClassBookingResponse(
         @Header("authorization") token: String,
-        @Path("weekIdx") classIdx: Int
+        @Path("weekIdx") weekIdx: Int
     ): Call<BookingData>
-
 
 }
 
