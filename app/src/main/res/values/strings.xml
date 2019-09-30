@@ -4,4 +4,7 @@
     <string name="forgetIDPW"><u>아이디/비밀번호를 잊으셨나요?</u></string>
 
     <string name="toolbar_hanok_list">한옥 스테이</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

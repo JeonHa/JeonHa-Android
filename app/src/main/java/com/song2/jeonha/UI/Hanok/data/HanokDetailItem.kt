@@ -1,5 +1,6 @@
 package com.song2.jeonha.UI.Hanok.data
 
+
 data class HanokDetailItem(
     val hanokIdx: Int,
     val name: String,
@@ -12,5 +13,5 @@ data class HanokDetailItem(
     val option: String,
     val transport: String,
     val img: ArrayList<PhotoItem>,
-    val rooms : ArrayList<Rooms>
-)
+    val rooms: ArrayList<Rooms>
+    )

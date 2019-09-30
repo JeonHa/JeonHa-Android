@@ -1,8 +1,12 @@
 package com.song2.jeonha.Network
 
+import com.google.gson.JsonObject
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.Post.PostQrcodeScanResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import com.song2.jeonha.Network.Get.GetUserIdCheckResponse
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
@@ -45,7 +49,6 @@ interface NetworkService {
      */
     @GET("/hanok/{hanokIdx}")
     fun getHanokDetailResponse(
-        @Header("Content-Type") content_type: String,
         @Path("hanokIdx") hanokIdx: Int
     ): Call<GetHanokDetailResponse>
 
@@ -67,6 +70,12 @@ interface NetworkService {
     fun getHanokBookingListResponse(
         @Header("authorization") token: String
     ): Call<GetBookingHanokListResponse>
+    //qr코드
+    @POST("/qr")
+    fun postQrcodeScanResponse(
+        @Header("authorization") token: String,
+        @Body() body: JsonObject
+    ): Call<PostQrcodeScanResponse>
 
     /**
      * 다예

@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import com.google.zxing.integration.android.IntentIntegrator
 import com.song2.jeonha.UI.Main.Mypage.MypageActivity
 import com.song2.jeonha.UI.Main.QRcode.QRcodeActivity
@@ -18,12 +20,14 @@ import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetMainResponse
 import com.song2.jeonha.UI.Main.data.MainPrograms
 import com.song2.jeonha.Network.NetworkService
+import com.song2.jeonha.Network.Post.PostQrcodeScanResponse
 import com.song2.jeonha.R
 import com.song2.jeonha.UI.Class.ClassListActivity
 import com.song2.jeonha.UI.Hanok.HanokFilterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 import org.jetbrains.anko.startActivity
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
 
@@ -151,7 +155,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun onQrcodeScanner() {
 
-
         val integrator = IntentIntegrator(this)
         integrator.setBeepEnabled(false)
         integrator.captureActivity = QRcodeActivity::class.java
@@ -163,7 +166,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             val scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
             val re = scanResult.contents
-            Toast.makeText(this, "$re", Toast.LENGTH_LONG).show()
+            getQrResponse(re)
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
@@ -194,6 +197,35 @@ class MainActivity : AppCompatActivity() {
                     }
                 }else
                     Log.e("mainPrograms fail", ":::test")
+
+            }
+        })
+    }
+
+    fun getQrResponse(url : String) {
+        var jsonObject = JSONObject()
+        jsonObject.put("url", url)
+
+//Gson 라이브러리의 Json Parser을 통해 객체를 Json으로!
+        val gsonObject = JsonParser().parse(jsonObject.toString()) as JsonObject
+        val postQrcodeScanResponse = networkService.postQrcodeScanResponse(
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHgiOjEsImlhdCI6MTU2OTIwODA0NSwiZXhwIjoxNTY5ODEyODQ1LCJpc3MiOiJqZW9uaGEyMDE5In0.D9Ao9zBftj5qdd1NL8lSk_--0hPir8Du3tTZs834Afw",gsonObject)
+
+        postQrcodeScanResponse.enqueue(object : retrofit2.Callback<PostQrcodeScanResponse> {
+            override fun onFailure(call: Call<PostQrcodeScanResponse>, t: Throwable) {
+                Log.e("qr fail", "통신 실패")
+            }
+
+            override fun onResponse(call: Call<PostQrcodeScanResponse>, response: Response<PostQrcodeScanResponse>) {
+                if (response.isSuccessful) {
+                    if(response.body()!!.status == 200){
+                        Log.e("qr fail", "성공")
+                    Toast.makeText(this@MainActivity,"QR 코드 인식되었습니다.",Toast.LENGTH_SHORT).show()
+                    }else if(response.body()!!.status == 500){
+                        Log.e("qr fail", "test 500")
+                        Toast.makeText(this@MainActivity,"인식 할 수 없는 QR 코드입니다.",Toast.LENGTH_SHORT).show()
+                    }
+                }
 
             }
         })
