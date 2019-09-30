@@ -2,6 +2,7 @@ package com.song2.jeonha.UI.Main
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -135,7 +136,6 @@ class MainActivity : AppCompatActivity() {
                 "‘건축왕’이라 불리는 그가 만들어낸\n" +
                         "경성, 북촌 한옥 마을의 뜨거운 역사 이야기\n" +
                         "- 건축왕, 경성을 만들다",
-
                 "http://naver.me/5az4AAdB"
             )
         )

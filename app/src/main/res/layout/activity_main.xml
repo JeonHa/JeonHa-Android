@@ -88,7 +88,7 @@
                         android:layout_marginTop="35dp"
                         android:fontFamily="@font/noto_sans_cjkkr_bold"
                         android:gravity="center_horizontal"
-                        android:text="Title"
+                        android:text="우리의 멋, 더 알아보기"
                         android:textColor="@color/dark"
                         android:textSize="20sp"/>
 
