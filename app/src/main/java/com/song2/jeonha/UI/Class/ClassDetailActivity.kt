@@ -132,7 +132,7 @@ class ClassDetailActivity : AppCompatActivity() {
                         Log.e("booking Fail", "예약 시스템 204")
                         ordercancelBtn(this@ClassDetailActivity)
                     }else{
-                        toast("알 수 없는 오류 입니다.")
+                        Log.e(TAG,"알 수 없는 오류 입니다.")
                     }
                 }
             }
