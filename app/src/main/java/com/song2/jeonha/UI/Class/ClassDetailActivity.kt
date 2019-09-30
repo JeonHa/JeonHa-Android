@@ -124,13 +124,15 @@ class ClassDetailActivity : AppCompatActivity() {
                     Log.e("booking Fail", "클래스 예약 성공")
                     //  Toast.makeText(this@HanokDetailActivity,response.body()!!.resMessage,Toast.LENGTH_SHORT).show()
 
-                    if (response.body()!!.resMessage=="이미 신청한 예약입니다") {
+                    if (response.body()!!.status==201) {
                         Log.e("booking Fail", "이미 신청한 예약입니다")
                         orderokBtn(this@ClassDetailActivity)
                     }
-                    else if (response.body()!!.resMessage=="이미 신청한 예약입니다" ){
+                    else if (response.body()!!.status==204 ){
                         Log.e("booking Fail", "예약 시스템 204")
                         ordercancelBtn(this@ClassDetailActivity)
+                    }else{
+                        toast("알 수 없는 오류 입니다.")
                     }
                 }
             }
