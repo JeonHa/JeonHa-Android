@@ -1,5 +1,6 @@
 package com.song2.jeonha.UI.Main.QRcode;
 
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,6 @@ public class QRcodeActivity extends AppCompatActivity implements  DecoratedBarco
         setContentView(R.layout.activity_qrcode);
         iv_qrcode_back =findViewById(R.id.iv_qrcode_back);
         barcodeView = findViewById(R.id.db_qr);
-
 
         manager = new CaptureManager(this,barcodeView);
         manager.initializeFromIntent(getIntent(),savedInstanceState);

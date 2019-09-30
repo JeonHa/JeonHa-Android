@@ -2,6 +2,7 @@ package com.song2.jeonha.UI.Main.Mypage
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.util.Log
 import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetStampResponse
@@ -12,9 +13,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.song2.jeonha.DB.SharedPreferenceController
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Login.LoginActivity
 
 
 class MypageActivity : AppCompatActivity() {
@@ -36,7 +39,12 @@ class MypageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.song2.jeonha.R.layout.activity_mypage)
-
+        tv_mypage_logout.setOnClickListener {
+            SharedPreferenceController.clearAccessToken(this)
+            ActivityCompat.finishAffinity(this)
+            Toast.makeText(this,"로그아웃 되었습니다.",Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
         getStampHResponse()
         // back button

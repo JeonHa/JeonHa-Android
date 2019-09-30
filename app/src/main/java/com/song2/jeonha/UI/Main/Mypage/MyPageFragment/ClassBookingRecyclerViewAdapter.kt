@@ -11,6 +11,8 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.ClassData
 import com.song2.jeonha.R
+import com.song2.jeonha.UI.Class.ClassDetailActivity
+import org.jetbrains.anko.startActivity
 
 class ClassBookingRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<ClassData?>) : RecyclerView.Adapter<ClassBookingRecyclerViewAdapter.Holder>() {
 
@@ -29,7 +31,7 @@ class ClassBookingRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<
         holder.tv_class_classname.text=dataList[position]!!.name
         holder.tv_class_day.text = dataList[position]!!.weekday
         holder.rl_item_class_all_contents.setOnClickListener {
-        //detailed 페이지로 idx 값 넘겨야함
+    ctx.startActivity<ClassDetailActivity>("idx" to dataList[position]!!.classIdx) //detailed 페이지로 idx 값 넘겨야함
         }
 
         Glide.with(ctx)

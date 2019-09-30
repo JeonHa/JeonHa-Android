@@ -40,6 +40,7 @@
     <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            app:tabSelectedTextColor="@color/watermelon"
             android:id="@+id/tl_apply_tabbar"
             app:tabBackground = "@android:color/transparent"
             app:tabMode="fixed"
