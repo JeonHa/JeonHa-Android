@@ -5,10 +5,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Hanok.HanokDetailActivity">
+        tools:context=".UI.Hanok.HanokDetailActivity">
 
 
     <android.support.v4.widget.NestedScrollView
+            android:layout_above="@+id/rl_ac_hanok_detail_order"
+            android:paddingBottom="8dp"
             android:id="@+id/sv_ac_hanok_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -22,12 +24,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_main_slider"
                     android:layout_width="match_parent"
                     android:layout_height="229dp"
                     android:background="#f4f4f4"/>
-
+            <android.support.design.widget.TabLayout
+                    android:id="@+id/tl_main_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabGravity="center"
+                    app:tabBackground="@drawable/dot_selector"
+                    >
+            </android.support.design.widget.TabLayout>
 
             <ImageView
+                    android:id="@+id/iv_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
@@ -52,6 +66,7 @@
                         android:orientation="horizontal">
 
                     <TextView
+                            android:includeFontPadding="false"
                             android:id="@+id/tv_ac_hanok_detail_"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -70,6 +85,8 @@
 
 
                     <TextView
+                            android:includeFontPadding="false"
+                            android:id="@+id/tv_detail_addres1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
@@ -81,6 +98,7 @@
 
 
                 <TextView
+                        android:includeFontPadding="false"
                         android:id="@+id/tv_ac_hanok_detail_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -92,6 +110,7 @@
 
 
                 <TextView
+                        android:includeFontPadding="false"
                         android:id="@+id/tv_ac_hanok_detail_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -131,6 +150,7 @@
                         android:src="@drawable/info_icon"/>
 
                 <TextView
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
@@ -142,27 +162,80 @@
             </LinearLayout>
 
 
+
             <TextView
-                    android:id="@+id/tv_ac_"
+                    android:includeFontPadding="false"
+                    android:id="@+id/tv_ac_hanok_detail_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
                     android:layout_marginTop="14dp"
-                    android:textColor="#495057"
                     android:fontFamily="@font/noto_sans_cjkkr_regular"
                     android:text="2016년 신축된 전통한옥으로, 한국의 전통이 살아있는 경복궁 인근 서울 종로 서촌에 위치해 있습니다. 4채의 독립된 건물인 한옥이 한대 모여있어, 개인 및 단체(가족/워크샵 등)로 오시는 분들에게도 안성맞춤입니다. 한옥체험업으로 정식 인가가되어 있고, 한국관광공사 통합품질인증 프리미어 등급의 인증을 받은 믿고 숙박 하실 수 있는 한옥입니다. 다양한 연령대의 손님들과, 여러 국적에서도 한국의 전통 가옥인 한옥에 찾아주십니다.
-" />
+"
+                    android:textColor="#495057"
+                    android:textSize="16sp" />
 
 
         </LinearLayout>
+
+        <View
+                android:id="@+id/view_option"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#ced4da" />
+
+            <LinearLayout
+                    android:id="@+id/ll_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/info_icon" />
+
+                    <TextView
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_cjkkr_bold"
+                            android:text="추가옵션"
+                            android:textColor="#444444"
+                            android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                        android:includeFontPadding="false"
+                        android:id="@+id/tv_ac_hanok_detail_option"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cjkkr_regular"
+                        android:textColor="#495057"
+                        android:textSize="16sp"
+                        tools:text="추가옵션 오는 자리"
+                        />
+
+
+            </LinearLayout>
 
 
         <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="#ced4da"/>
-
+                android:background="#ced4da" />
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -230,23 +303,29 @@
                     android:orientation="horizontal">
 
                 <ImageView
+                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="4dp"
-                        android:src="@drawable/info_icon"/>
+                        android:src="@drawable/location_icon" />
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:layout_gravity="center_vertical"
-                        android:textColor="#444444"
-                        android:fontFamily="@font/noto_sans_cjkkr_bold"
-                        android:text="오시는 길"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/noto_sans_cjkkr_bold"
+                            android:text="오시는 길"
+                            android:textColor="#444444"
+                            android:textSize="14sp" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
             <TextView
+                    android:layout_marginHorizontal="16dp"
+                    android:id="@+id/tv_hanok_ad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
@@ -254,8 +333,18 @@
                     android:layout_marginTop="4dp"
                     android:text="서울시 종로구 체부동 147-1"/>
 
+            <fragment
+                    android:layout_marginHorizontal="16dp"
+                    android:id="@+id/frag_detail_map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="178dp"
+                    android:layout_marginVertical="12dp"
+                    tools:context=".UI.Hanok.HanokDetailActivity" />
+
 
             <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
@@ -265,12 +354,14 @@
 
 
             <TextView
+                    android:layout_marginHorizontal="16dp"
+                    android:id="@+id/tv_ha_tran"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#868e96"
-                    android:text="서울 지하철 3호선 &apos;경복궁역&apos; 2번출구 -&gt;
+                    tools:text="서울 지하철 3호선 &apos;경복궁역&apos; 2번출구 -&gt;
 도보 5분정도 거리
 + 인천공항 -&gt; 한옥
 6011 버스 - 경복궁역 하차 - 도보 5분거리
@@ -281,21 +372,17 @@
         </LinearLayout>
 
 
-    </LinearLayout>
 
 
 
     </android.support.v4.widget.NestedScrollView>
 
-
-
-
-        <RelativeLayout
-                android:id="@+id/rl_ac_hanok_detail_order"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#f4f2f2"
-                android:layout_alignParentBottom="true">
+    <RelativeLayout
+            android:id="@+id/rl_ac_hanok_detail_order"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
 
 
             <ImageView

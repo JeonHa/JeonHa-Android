@@ -1,17 +1,21 @@
 package com.song2.jeonha.Network
 
 import com.google.gson.JsonObject
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
-import com.song2.jeonha.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokListResponse
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.Get.GetStampResponse
+import com.song2.jeonha.Network.Post.PostQrcodeScanResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import com.song2.jeonha.Network.Get.GetUserIdCheckResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingClassListResponse
+import com.song2.jeonha.UI.Main.Mypage.MyPageFragment.GetMyBookingList.GetBookingHanokListResponse
+import com.song2.jeonha.Network.Get.*
 import com.song2.jeonha.Network.Post.PostUserLogin
 import com.song2.jeonha.Network.Post.PostUserSignUp
 import com.song2.jeonha.Network.Post.Response.PostUserLoginResponse
 import com.song2.jeonha.Network.Post.Response.PostUserSignUpResponse
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
+import com.song2.jeonha.NetworkDataClass.BookingData
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -40,6 +44,17 @@ interface NetworkService {
         @Query("sort") sort: Int
     ): Call<GetHanokListResponse>
 
+    /**
+     * 소희
+     * 한옥디테일
+     */
+    @GET("/hanok/{hanokIdx}")
+    fun getHanokDetailResponse(
+        @Path("hanokIdx") hanokIdx: Int
+    ): Call<GetHanokDetailResponse>
+
+
+
     //스탬프 조회
     @GET("/user/stamp")
     fun getStampResponse(
@@ -56,6 +71,12 @@ interface NetworkService {
     fun getHanokBookingListResponse(
         @Header("authorization") token: String
     ): Call<GetBookingHanokListResponse>
+    //qr코드
+    @POST("/qr")
+    fun postQrcodeScanResponse(
+        @Header("authorization") token: String,
+        @Body() body: JsonObject
+    ): Call<PostQrcodeScanResponse>
 
     /**
      * 다예
@@ -71,6 +92,36 @@ interface NetworkService {
     fun postUserSignUp(
         @Body authorization: PostUserSignUp
     ): Call<PostUserSignUpResponse>
+
+    @GET("/user/check")
+    fun getUserIdCheck(
+        @Query("id") id : String
+    ) : Call<GetUserIdCheckResponse>
+
+    //메인 조회
+    @GET("/main")
+    fun getMainResponse(
+        @Header("authorization") token: String
+    ): Call<GetMainResponse>
+
+    @GET("/class")
+    fun getClassListResponse(
+        @Query ("day") day : Int
+    ): Call<GetClassListResponse>
+
+    //클래스 디테일
+    @GET("/class/{classIdx}")
+    fun getClassDetailResponse(
+        @Path("classIdx") classIdx: Int
+    ): Call<GetClassDetailResponse>
+
+    //예약하기
+    @POST("/hanok/{hanokIdx}/reservation")
+    fun getBookingResponse(
+        @Header("authorization") token: String,
+        @Path("hanokIdx") classIdx: Int
+    ): Call<BookingData>
+
 
 }
 

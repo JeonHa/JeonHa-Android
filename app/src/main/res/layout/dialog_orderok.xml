@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="239dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+
+    <ImageView
+            android:id="@+id/iv_dialog_orderok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/naeshi"/>
+
+    <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black_87"
+            android:lineSpacingExtra="8sp"
+            android:layout_below="@+id/iv_dialog_orderok"
+            android:layout_centerHorizontal="true"
+            android:text="예약이 완료되었나이다."/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#868e96"
+            android:lineSpacingExtra="6sp"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/tv_order"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="7dp"
+            android:text="예약 내역은 마이 페이지 &gt; 상세내역에서 확인할 수 있으시옵니다."
+            />
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+
+        <TextView
+                android:id="@+id/btn_dialog_hanok_ok1"
+                style="@style/WhiteMediumFontStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/watermelon"
+                android:gravity="center"
+                android:text="확인"
+                android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

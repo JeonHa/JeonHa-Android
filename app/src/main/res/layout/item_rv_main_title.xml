@@ -4,24 +4,61 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/rv_item_main_title_container"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_width="match_parent" android:layout_height="380dp">
+        android:layout_marginVertical="14dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_width="match_parent" android:layout_height="420dp">
     <ImageView
-            android:id="@+id/iv_item_main_title_image"
-            android:scaleType="fitXY"
-            android:layout_width="match_parent" android:layout_height="match_parent"
-            android:src="@color/dark"/>
+            android:id="@+id/iv_item_main_title_image1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scaleType="fitXY"
+            android:src="@drawable/banner_1"/>
+    <ImageView
+            android:id="@+id/iv_item_main_title_image2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scaleType="fitXY"
+            android:src="@drawable/banner_2"/>
+    <ImageView
+            android:id="@+id/iv_item_main_title_image3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scaleType="fitXY"
+            android:src="@drawable/banner_3"/>
+    <ImageView
+            android:id="@+id/iv_item_main_title_image4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scaleType="fitXY"
+            android:src="@drawable/banner_4"/>
+    <ImageView
+            android:id="@+id/iv_item_main_title_image5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scaleType="fitXY"
+            android:src="@drawable/banner_5"/>
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="110dp"
+    android:background="@drawable/dark_gra">
+
+    </RelativeLayout>
 
     <TextView
             android:id="@+id/tv_item_main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/noto_sans_cjkkr_medium"
             android:includeFontPadding="false"
             android:text="Title"
             android:textColor="#ffffff"
             android:textSize="20sp"/>
-</RelativeLayout>
+
+    <TextView
+            android:id="@+id/tv_item_sub_title"
+            android:layout_below="@+id/tv_item_main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/noto_sans_cjkkr_medium"
+            android:includeFontPadding="false"
+            android:text="Title"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/></RelativeLayout>

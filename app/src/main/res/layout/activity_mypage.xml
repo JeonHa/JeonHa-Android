@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Main.Mypage.MypageActivity">
+        tools:context=".UI.Main.Mypage.MypageActivity">
 <RelativeLayout
         android:paddingBottom="20dp"
         android:elevation="10dp"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans_cjkkr_light"
                 android:includeFontPadding="false"
-                android:text="김은혜님\n오늘도\n강녕하시옵소서"
+                android:text="     님\n오늘도\n강녕하시옵소서"
                 android:textColor="#ffffff"
                 android:textSize="23dp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_mypage_myList"
@@ -81,6 +81,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.067"
                 app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+                android:id="@+id/tv_mypage_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_mypage_name"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/noto_sans_cjkkr_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="12sp"
+                android:text="로그아웃"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.863"
+                app:layout_constraintStart_toEndOf="@+id/tv_mypage_myList" />
     </android.support.constraint.ConstraintLayout>
 </RelativeLayout>
     <RelativeLayout
