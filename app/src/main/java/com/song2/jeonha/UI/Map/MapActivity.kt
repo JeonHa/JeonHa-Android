@@ -23,7 +23,7 @@ import com.song2.jeonha.Network.ApplicationController
 import com.song2.jeonha.Network.Get.GetHanokMapResponse
 import com.song2.jeonha.Network.NetworkService
 import com.song2.jeonha.R
-import com.song2.jeonha.UI.Class.ClassListActivity
+import com.song2.jeonha.UI.Hanok.HanokFilterActivity
 import kotlinx.android.synthetic.main.activity_map.*
 import kotlinx.android.synthetic.main.toolbar_map.*
 import org.jetbrains.anko.startActivity
@@ -70,11 +70,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun setOnBtnClickListener() {
         btn_map_act_go_list.setOnClickListener {
-            startActivity<ClassListActivity>()
+            startActivity<HanokFilterActivity>()
         }
 
         btn_map_act_go_list2.setOnClickListener {
-            startActivity<ClassListActivity>()
+            startActivity<HanokFilterActivity>()
         }
 
         img_toolbar_map_back.setOnClickListener {
