@@ -121,6 +121,12 @@ interface NetworkService {
         @Header("authorization") token: String,
         @Path("hanokIdx") classIdx: Int
     ): Call<BookingData>
+    //예약하기
+    @POST("/class/{classIdx}/reservation")
+    fun getClassBookingResponse(
+        @Header("authorization") token: String,
+        @Path("classIdx") classIdx: Int
+    ): Call<BookingData>
 
 
 }
