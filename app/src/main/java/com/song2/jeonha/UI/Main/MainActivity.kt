@@ -111,15 +111,6 @@ class MainActivity : AppCompatActivity() {
 
         titleListData.add(
             TitleData(
-                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
-                "북촌 한옥 마을에서 만나는 맛집 10선",
-                "구경도 하고, 배도 채우고 !\n" +
-                        "입 안 가득 채워지는 우리의 맛\n",
-                "http://naver.me/5l8Meuhk"
-            )
-        )
-        titleListData.add(
-            TitleData(
                 "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/cpdq3jxrnhdmjvow79qs/.jpg",
                 "사랑하는 사람과 함께하는 삼청동 데이트 코스",
                 "북촌 8경, 감성 가득한 포토 스팟에서\n" +
@@ -129,6 +120,18 @@ class MainActivity : AppCompatActivity() {
 
             )
         )
+
+        titleListData.add(
+            TitleData(
+                "https://post-phinf.pstatic.net/MjAxNzA5MjBfMTAx/MDAxNTA1ODc3OTc0NDEz.Kvi6RAECepI8fweR4ddrgFEdRJzU2KC-WLmFRTmuSEEg.BkaL2u6ZTT-wn7agPveSnOYSwxodVIeKzUc_pL5PRrgg.JPEG/trd032tg13012.jpg?type=w800_q75",
+                "북촌 한옥 마을에서 만나는 맛집 10선",
+                "구경도 하고, 배도 채우고 !\n" +
+                        "입 안 가득 채워지는 우리의 맛\n",
+                "http://naver.me/5l8Meuhk"
+            )
+        )
+
+
         titleListData.add(
             TitleData(
                 "https://post-phinf.pstatic.net/MjAxNzAyMDhfMTUg/MDAxNDg2NTM1MzQ4Njcz.Gw2i1l4CHcQsb3tZlGoctLI8iofD92zlDp4_VldIEacg.VoLRH7NXhRsrHsYMYr_LO2M4tUlrrWmtNBEyaBvkNk8g.JPEG/007.jpg?type=w1200",
