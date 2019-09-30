@@ -47,7 +47,7 @@ class ClassDetailActivity : AppCompatActivity() {
         classIdx = intent.getIntExtra("idx", -1)
 
         iv_ac_hanok_detail_order.setOnClickListener {
-            postClassBookingResponse(intent.getIntExtra("idx", -1))
+            postClassBookingResponse(intent.getIntExtra("weekIdx", -1))
         }
         //toast(classIdx.toString())
         getClassDetailResponse(classIdx!!)
@@ -121,9 +121,9 @@ class ClassDetailActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<BookingData>, response: Response<BookingData>) {
                 if (response.isSuccessful) {
-                    Log.e("booking Fail", "클래스 예약 성공")
+                    Log.e("booking Fail", response.body()!!.status.toString())
                     //  Toast.makeText(this@HanokDetailActivity,response.body()!!.resMessage,Toast.LENGTH_SHORT).show()
-
+                    toast(response.body()!!.status.toString())
                     if (response.body()!!.status==201) {
                         Log.e("booking Fail", "이미 신청한 예약입니다")
                         orderokBtn(this@ClassDetailActivity)

@@ -35,7 +35,7 @@ class ClassListRecyclerViewAdapter(var ctx: Context, var dataList: ArrayList<Cla
         holder.classTitle.text = dataList[position].name
         //holder.classDay.text
         holder.container.setOnClickListener {
-            ctx.startActivity<ClassDetailActivity>("idx" to dataList[position].classIdx)
+            ctx.startActivity<ClassDetailActivity>("idx" to dataList[position].classIdx,"weekIdx" to dataList[position].weekIdx)
         }
 
 /*        var store_day = dataList[position].weekday.split(" ") as ArrayList<String>
