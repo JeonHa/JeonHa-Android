@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_gravity="center"
         android:layout_width="280dp"
         android:layout_height="239dp"
         android:background="#ffffff"
@@ -23,7 +22,7 @@
             android:lineSpacingExtra="8sp"
             android:layout_below="@+id/iv_dialog_orderok"
             android:layout_centerHorizontal="true"
-            android:text="예약이 완료되었나이다."/>
+            android:text="이미 신청한 예약이옵니다."/>
 
     <TextView
             android:layout_width="wrap_content"
@@ -47,7 +46,7 @@
 
 
         <TextView
-                android:id="@+id/btn_dialog_hanok_ok1"
+                android:id="@+id/btn_dialog_hanok_ok2"
                 style="@style/WhiteMediumFontStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

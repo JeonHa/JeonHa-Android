@@ -15,6 +15,7 @@ import com.song2.jeonha.Network.Post.PostUserLogin
 import com.song2.jeonha.Network.Post.PostUserSignUp
 import com.song2.jeonha.Network.Post.Response.PostUserLoginResponse
 import com.song2.jeonha.Network.Post.Response.PostUserSignUpResponse
+import com.song2.jeonha.NetworkDataClass.BookingData
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -113,5 +114,14 @@ interface NetworkService {
     fun getClassDetailResponse(
         @Path("classIdx") classIdx: Int
     ): Call<GetClassDetailResponse>
+
+    //예약하기
+    @POST("/hanok/{hanokIdx}/reservation")
+    fun getBookingResponse(
+        @Header("authorization") token: String,
+        @Path("hanokIdx") classIdx: Int
+    ): Call<BookingData>
+
+
 }
 
