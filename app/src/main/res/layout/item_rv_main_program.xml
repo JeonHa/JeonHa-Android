@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/rv_item_main_program_list_container"
         android:layout_width="90dp" android:layout_height="99dp"
         android:layout_marginStart="8dp">
@@ -13,10 +11,9 @@
             android:src="#FFFFFF"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/cv_item_main_program_list_cocer"
-        android:layout_width="99dp" android:layout_height="99dp"
-        android:src="#4D000000"/>
-
+            android:id="@+id/cv_item_main_program_list_cocer"
+            android:layout_width="99dp" android:layout_height="99dp"
+            android:src="#4D000000"/>
     <TextView
             android:id="@+id/iv_item_main_program_list_title"
             android:layout_width="match_parent"
