@@ -13,19 +13,19 @@
                 android:padding="12dp"
                 android:src="@drawable/qr_icon"/>
 
-        <ImageView 
-        android:id="@+id/iv_main_home"
-                   android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:layout_centerInParent="true"
-                   android:src="@drawable/jeonha_main_icon"/>
+        <ImageView
+                android:id="@+id/iv_main_home"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/jeonha_main_icon"/>
 
-        <ImageView 
-                   android:id="@+id/iv_main_mypage"
-                   android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:layout_alignParentRight="true"
-                   android:layout_margin="4dp"
-                   android:padding="12dp"
-                   android:src="@drawable/mypage_icon"/>
+        <ImageView
+                android:id="@+id/iv_main_mypage"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="4dp"
+                android:padding="12dp"
+                android:src="@drawable/mypage_icon"/>
 
     </RelativeLayout>
 
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                tools:context=".Main.MainActivity">
+                tools:context=".UI.Main.MainActivity">
             <RelativeLayout android:layout_width="match_parent" android:layout_height="243dp"
                             android:background="#f4f2f2">
 
@@ -53,22 +53,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_below="@+id/switch_main_main_act_selector"
-                        android:scrollbars="none"
-                        android:layout_marginTop="20.5dp">
+                        android:layout_marginTop="20.5dp"
+                        android:scrollbars="none">
 
                     <LinearLayout android:layout_width="match_parent"
                                   android:layout_height="match_parent"
                                   android:orientation="horizontal">
                         <ImageView
                                 android:id="@+id/iv_main_act_more_btn"
-                                android:src="@drawable/btn_more"
-                                android:layout_marginStart="32dp"
-                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp" android:src="@drawable/btn_more"/>
                         <android.support.v7.widget.RecyclerView
-                                android:layout_below="@+id/switch_main_main_act_selector"
-                                android:layout_toRightOf="@+id/scr"
                                 android:id="@+id/rv_main_act_class_list"
-                                android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/switch_main_main_act_selector" android:layout_toRightOf="@+id/scr">
                         </android.support.v7.widget.RecyclerView>
                     </LinearLayout>
 

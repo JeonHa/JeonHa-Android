@@ -8,7 +8,7 @@
             android:id="@+id/iv_item_class_list_img"
             android:layout_width="match_parent" android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@color/dark"/>
+    android:background="@color/dark"/>
 
     <LinearLayout
             android:layout_alignParentBottom="true"
