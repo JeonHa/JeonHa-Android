@@ -34,6 +34,10 @@ class ClassListActivity : AppCompatActivity() {
         iv_class_list_act_filter_btn.setOnClickListener {
             clickFilterBtn()
         }
+
+        iv_class_list_act_back_btn.setOnClickListener {
+            finish()
+        }
     }
 
     fun clickFilterBtn(){

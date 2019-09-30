@@ -128,6 +128,5 @@ interface NetworkService {
         @Path("weekIdx") weekIdx: Int
     ): Call<BookingData>
 
-
 }
 

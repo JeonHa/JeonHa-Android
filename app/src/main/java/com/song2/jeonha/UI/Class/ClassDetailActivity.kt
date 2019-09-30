@@ -20,8 +20,6 @@ import com.song2.jeonha.UI.Hanok.adapter.SliderMainPagerAdapter
 import kotlinx.android.synthetic.main.activity_class_detail.*
 import kotlinx.android.synthetic.main.activity_class_detail.tl_main_indicator
 import kotlinx.android.synthetic.main.activity_class_detail.vp_main_slider
-import kotlinx.android.synthetic.main.activity_hanok_detail.*
-import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,10 +47,8 @@ class ClassDetailActivity : AppCompatActivity() {
         iv_ac_hanok_detail_order.setOnClickListener {
             postClassBookingResponse(intent.getIntExtra("weekIdx", -1))
         }
-        //toast(classIdx.toString())
         getClassDetailResponse(classIdx!!)
 
-        //getClassDetailResponse(classIdx!!)
     }
 
     private fun getClassDetailResponse(idx: Int) {
@@ -122,8 +118,6 @@ class ClassDetailActivity : AppCompatActivity() {
             override fun onResponse(call: Call<BookingData>, response: Response<BookingData>) {
                 if (response.isSuccessful) {
                     Log.e("booking Fail", response.body()!!.status.toString())
-                    //  Toast.makeText(this@HanokDetailActivity,response.body()!!.resMessage,Toast.LENGTH_SHORT).show()
-                    toast(response.body()!!.status.toString())
                     if (response.body()!!.status==201) {
                         Log.e("booking Fail", "이미 신청한 예약입니다")
                         orderokBtn(this@ClassDetailActivity)
@@ -132,7 +126,7 @@ class ClassDetailActivity : AppCompatActivity() {
                         Log.e("booking Fail", "예약 시스템 204")
                         ordercancelBtn(this@ClassDetailActivity)
                     }else{
-                        toast("알 수 없는 오류 입니다.")
+                        Log.e(TAG,"알 수 없는 오류 입니다.")
                     }
                 }
             }

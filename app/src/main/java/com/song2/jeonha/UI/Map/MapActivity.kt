@@ -71,10 +71,12 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,
     private fun setOnBtnClickListener() {
         btn_map_act_go_list.setOnClickListener {
             startActivity<HanokFilterActivity>()
+            finish()
         }
 
         btn_map_act_go_list2.setOnClickListener {
             startActivity<HanokFilterActivity>()
+            finish()
         }
 
         img_toolbar_map_back.setOnClickListener {
